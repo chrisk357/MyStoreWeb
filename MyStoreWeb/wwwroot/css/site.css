@@ -1,6 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-
+/*
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -8,7 +8,7 @@ a.navbar-brand {
 }
 
 /* Sticky footer styles
--------------------------------------------------- */
+-------------------------------------------------- 
 html {
   font-size: 14px;
 }
@@ -35,14 +35,14 @@ button.accept-policy {
 }
 
 /* Sticky footer styles
--------------------------------------------------- */
+-------------------------------------------------- 
 html {
   position: relative;
   min-height: 100%;
 }
-
+    */
 body {
-  /* Margin bottom by footer height */
+  Margin bottom by footer height 
   margin-bottom: 60px;
 }
 .footer {
@@ -50,25 +50,31 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  /* Set the fixed height of the footer here */
+  /*Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
 /*
     MY CSS CODE ADDED
 */
+
+
 .BikeProduct {
-    border: 2px solid;    
+    border: 1px solid;    
     display: inline-block;
+    font-size:smaller;
+    float:left;
+    
 }
 .BikeProduct ul {
-    padding: 3px;
-    background-color:lightblue;
+    padding: 1px;
+    
 }
-.ContactForm label {
-    display: inline-block;
-      
+.BikeProduct button {
+
+    
 }
-.ContactForm input {
-    display:block;
+.BikeProduct image {
+    
 }
+
