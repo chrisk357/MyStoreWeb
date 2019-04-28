@@ -3,6 +3,6 @@
     "Favorite": "blue"
   },
   "ConnectionStrings": {
-    "StoreConnectionString": "server=(localdb)\\MSSQLLocalDb;Database=StoreDb;Integrated Security=truel;MultipleActiveResultSets=true;"
+    "StoreConnectionString": "server=(localdb)\\MSSQLLocalDb;Database=StoreDb;Integrated Security=true;MultipleActiveResultSets=true;"
   }
 }
