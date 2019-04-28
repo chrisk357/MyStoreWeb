@@ -28,8 +28,13 @@ using MyStoreWeb.Controllers;
 
 #line default
 #line hidden
+#line 4 "C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\Views\_ViewImports.cshtml"
+using MyStoreWeb.Data.Entities;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7a82749d0be0e3fb8b6f8c3fac066ff6a314ed6e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fffaef0a4ed559cf3feb979674c00cf612d0b114", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

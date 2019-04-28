@@ -28,8 +28,13 @@ using MyStoreWeb.Controllers;
 
 #line default
 #line hidden
+#line 4 "C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\Views\_ViewImports.cshtml"
+using MyStoreWeb.Data.Entities;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"302504f49a27c3e0acb7fd1d5fd71679ed9556d7", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7a82749d0be0e3fb8b6f8c3fac066ff6a314ed6e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fffaef0a4ed559cf3feb979674c00cf612d0b114", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/images/fmfgoldseries.jpeg"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -64,12 +69,12 @@ using MyStoreWeb.Controllers;
 #line default
 #line hidden
             BeginContext(45, 584, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "302504f49a27c3e0acb7fd1d5fd71679ed9556d74308", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "302504f49a27c3e0acb7fd1d5fd71679ed9556d74469", async() => {
                 BeginContext(51, 41, true);
                 WriteLiteral("\r\n    <div class=\"BikeProduct\">\r\n        ");
                 EndContext();
                 BeginContext(92, 41, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "302504f49a27c3e0acb7fd1d5fd71679ed9556d74731", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "302504f49a27c3e0acb7fd1d5fd71679ed9556d74892", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -87,7 +92,7 @@ using MyStoreWeb.Controllers;
                 WriteLiteral("\r\n        <ul>Brand: FMF</ul>\r\n        <ul>Product: Gold Series</ul>\r\n        <ul>Description: Chrome Plated</ul>\r\n\r\n\r\n        <button id=\"buyButton\" class=\"btn btn-success\">Add</button>\r\n    </div>   \r\n    <div class=\"BikeProduct\">\r\n\r\n        ");
                 EndContext();
                 BeginContext(377, 43, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "302504f49a27c3e0acb7fd1d5fd71679ed9556d76239", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "302504f49a27c3e0acb7fd1d5fd71679ed9556d76400", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

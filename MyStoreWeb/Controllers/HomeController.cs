@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MyStoreWeb.Data;
 using MyStoreWeb.Models;
 using MyStoreWeb.Services;
 
@@ -12,10 +13,12 @@ namespace MyStoreWeb.Controllers
     public class HomeController : Controller
     {
         private readonly IMailService _mailService;
+        private readonly StoreContext _context;
 
-        public HomeController(IMailService mailService)
+        public HomeController(IMailService mailService, StoreContext context)
         {
             _mailService = mailService;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -45,6 +48,22 @@ namespace MyStoreWeb.Controllers
 
             return View();
         }
+
+        public IActionResult Shop()
+        {
+            /*
+            var results = _context.Products
+                .OrderBy(p => p.Category)
+                .ToList();
+            */
+            //This does the same thing as above
+
+            var results = from p in _context.Products
+                          orderby p.Category
+                          select p;
+            return View(results.ToList());
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
