@@ -1,0 +1,8 @@
+﻿{
+  "Colors": {
+    "Favorite": "blue"
+  },
+  "ConnectionStrings": {
+    "StoreConnectionString": "server=(localdb)\\MSSQLLocalDb;Database=StoreDb;Integrated Security=truel;MultipleActiveResultSets=true;"
+  }
+}

@@ -24,9 +24,14 @@ namespace MyStoreWeb
             .Build();
 
 
-private static void SetupConfiguration(WebHostBuilderContext ctx, IConfigurationBuilder builder)
+        private static void SetupConfiguration(WebHostBuilderContext ctx, IConfigurationBuilder builder)
         {
-            throw new NotImplementedException();
+            //Removing Default configuration options
+            builder.Sources.Clear();
+
+            builder.AddJsonFile("config.json", false, true)
+             //   .AddXmlFile("config.xml", true)
+                 .AddEnvironmentVariables();
         }
     }
 }

@@ -12,11 +12,10 @@ namespace MyStoreWeb.Data.Entities
         public string ProductBrand { get; set; }
         public string ProductModel { get; set; }
         public string Description { get; set; }
-
         public string ProductSize { get; set; }
-
         public string ProductColor { get; set; }
+        public string ProductImage { get; set; }
         public decimal ProductPrice { get; set; }
-        public string ProductNSN { get; set; }
+       
     }
 }
