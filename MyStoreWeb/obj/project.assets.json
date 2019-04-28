@@ -13129,11 +13129,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\MyStoreWeb\\MyStoreWeb\\MyStoreWeb.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Source\\Repos\\chrisk357\\MyStoreWeb\\MyStoreWeb\\MyStoreWeb.csproj",
       "projectName": "MyStoreWeb",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\MyStoreWeb\\MyStoreWeb\\MyStoreWeb.csproj",
+      "projectPath": "C:\\Users\\Admin\\Source\\Repos\\chrisk357\\MyStoreWeb\\MyStoreWeb\\MyStoreWeb.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\MyStoreWeb\\MyStoreWeb\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Source\\Repos\\chrisk357\\MyStoreWeb\\MyStoreWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
