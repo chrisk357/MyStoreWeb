@@ -41,8 +41,7 @@ html {
   min-height: 100%;
 }
     */
-body {
-  Margin bottom by footer height 
+body { 
   margin-bottom: 60px;
 }
 .footer {
@@ -63,7 +62,7 @@ body {
     border: 1px solid;    
     display: inline-block;
     font-size:smaller;
-    float:left;
+
     
 }
 .BikeProduct ul {
