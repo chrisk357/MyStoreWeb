@@ -54,3 +54,21 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+/*
+    MY CSS CODE ADDED
+*/
+.BikeProduct {
+    border: 2px solid;    
+    display: inline-block;
+}
+.BikeProduct ul {
+    padding: 3px;
+    background-color:lightblue;
+}
+.ContactForm label {
+    display: inline-block;
+      
+}
+.ContactForm input {
+    display:block;
+}
