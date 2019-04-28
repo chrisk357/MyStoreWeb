@@ -29,4 +29,3 @@ C:\Users\Admin\source\repos\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStor
 C:\Users\Admin\source\repos\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\Razor\Views\Home\Contact.g.cshtml.cs
 C:\Users\Admin\source\repos\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.Properties.Resources.resources
 C:\Users\Admin\source\repos\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.csproj.GenerateResource.cache
-C:\Users\Admin\source\repos\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.csprojAssemblyReference.cache
