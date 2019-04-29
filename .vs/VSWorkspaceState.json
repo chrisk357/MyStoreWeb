@@ -2,9 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\MyStoreWeb",
+    "\\MyStoreWeb\\Controllers",
     "\\MyStoreWeb\\Data",
     "\\MyStoreWeb\\Data\\Entities",
-    "\\MyStoreWeb\\Models"
+    "\\MyStoreWeb\\Migrations",
+    "\\MyStoreWeb\\Models",
+    "\\MyStoreWeb\\Views",
+    "\\MyStoreWeb\\Views\\Home"
   ],
   "SelectedNode": "\\MyStoreWeb.sln",
   "PreviewInSolutionExplorer": false

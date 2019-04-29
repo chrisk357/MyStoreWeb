@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MyStoreWeb.Data;
+using MyStoreWeb.Data.Entities;
 using MyStoreWeb.Models;
 using MyStoreWeb.Services;
 
@@ -13,16 +16,19 @@ namespace MyStoreWeb.Controllers
     public class HomeController : Controller
     {
         private readonly IMailService _mailService;
-        private readonly StoreContext _context;
+        private readonly IStoreRepository _repository;
+        
 
-        public HomeController(IMailService mailService, StoreContext context)
+        public HomeController(IMailService mailService, IStoreRepository repository)
         {
             _mailService = mailService;
-            _context = context;
+            _repository = repository;
+            
         }
 
         public IActionResult Index()
         {
+          //  var results = _ctx.Products.ToList();
             return View();
         }
 
@@ -51,17 +57,20 @@ namespace MyStoreWeb.Controllers
 
         public IActionResult Shop()
         {
+            var results = _repository.GetAllProducts();
+            return View(results);
             /*
             var results = _context.Products
                 .OrderBy(p => p.Category)
                 .ToList();
-            */
+            
             //This does the same thing as above
 
-            var results = from p in _context.Products
+            var results = from p in DbContext.Products
                           orderby p.Category
                           select p;
             return View(results.ToList());
+            */
         }
 
 

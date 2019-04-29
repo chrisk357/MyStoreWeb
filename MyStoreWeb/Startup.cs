@@ -32,6 +32,7 @@ namespace MyStoreWeb
             {
                 cfg.UseSqlServer(_config.GetConnectionString("StoreConnectionString"));
                 });
+
                 services.Configure<CookiePolicyOptions>(options =>
                 {
                     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -39,6 +40,8 @@ namespace MyStoreWeb
                     options.MinimumSameSitePolicy = SameSiteMode.None;
                 });
 
+                services.AddTransient<StoreSeeder>();
+                services.AddScoped<IStoreRepository, StoreRepository>();
                 services.AddTransient<IMailService, NullMailService>();
 
                 services.AddMvc(); //.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

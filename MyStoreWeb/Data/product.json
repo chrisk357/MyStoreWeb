@@ -1,40 +1,40 @@
 [
   {
     "Id": 0,
-    "Category": "Parts",
+    "Category": "Exhaust",
     "ProductBrand": "FMF",
-    "ProductModel": "Exhaust Pipe",
-    "Description": "PowerCore Platinum Pipe",
+    "ProductModel": "Factory Fatty Pipe",
+    "Description": "",
     "ProductSize": "",
     "ProductColor": "Chrome",
-    "ProductImage": "",
-    "ProductPrice": 149.99
+    "ProductImage": "~/images/fmffactorypipe.jpg",
+    "ProductPrice": 233.99
   },
   {
     "Id": 0,
-    "Category": "Parts",
+    "Category": "Exhaust",
     "ProductBrand": "FMF",
-    "ProductModel": "Exhaust Pipe",
-    "Description": "Fatty Pipe Factory Sound Series",
+    "ProductModel": "Gold Series Pipe",
+    "Description": "",
     "ProductSize": "",
     "ProductColor": "Chrome",
     "ProductImage": "",
-    "ProductPrice": 149.99
+    "ProductPrice": 207.18
   },
   {
     "Id": 0,
-    "Category": "Parts",
+    "Category": "Exhaust",
     "ProductBrand": "Pro Circuit",
-    "ProductModel": "Exhaust Pipe",
-    "Description": "Power No Factory Short Custom",
+    "ProductModel": "Exhaust",
+    "Description": "Pro Circuit Platinum Pipe",
     "ProductSize": "",
     "ProductColor": "Blue/Grey",
     "ProductImage": "",
-    "ProductPrice": 199.99
+    "ProductPrice": 217.76
   },
   {
     "Id": 0,
-    "Category": "Parts",
+    "Category": "Exhaust",
     "ProductBrand": "Pro Circuit",
     "ProductModel": "Exhaust Pipe",
     "Description": "Monster Energy KX Factory Sound",
@@ -45,7 +45,7 @@
   },
   {
     "Id": 0,
-    "Category": "Parts",
+    "Category": "Exhaust",
     "ProductBrand": "Bills",
     "ProductModel": "Exhaust Pipe",
     "Description": "Hand Created Limited Factory Edition",
@@ -56,7 +56,7 @@
   },
   {
     "Id": 0,
-    "Category": "Parts",
+    "Category": "Exhaust",
     "ProductBrand": "FMF",
     "ProductModel": "Exhaust Silencer",
     "Description": "PowerCore Platinum Silencer",
@@ -67,7 +67,7 @@
   },
   {
     "Id": 0,
-    "Category": "Parts",
+    "Category": "Exhaust",
     "ProductBrand": "FMF",
     "ProductModel": "Exhaust Silencer",
     "Description": "Shorty Silencer",
