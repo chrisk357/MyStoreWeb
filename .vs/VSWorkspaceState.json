@@ -8,8 +8,8 @@
     "\\MyStoreWeb\\Migrations",
     "\\MyStoreWeb\\Models",
     "\\MyStoreWeb\\Views",
-    "\\MyStoreWeb\\Views\\Home"
+    "\\MyStoreWeb\\wwwroot",
+    "\\MyStoreWeb\\wwwroot\\images"
   ],
-  "SelectedNode": "\\MyStoreWeb.sln",
   "PreviewInSolutionExplorer": false
 }

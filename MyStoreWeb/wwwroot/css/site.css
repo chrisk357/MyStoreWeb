@@ -69,11 +69,17 @@ body {
     padding: 1px;
     
 }
-.BikeProduct button {
+menu li {
+    display: inline;
+}
 
-    
-}
-.BikeProduct image {
-    
-}
+    menu li::after {
+        content: ' |';
+    }
+
+    menu li:last-of-type::after {
+        content: "";
+    }
+
+
 

@@ -55,6 +55,10 @@ namespace MyStoreWeb.Controllers
             return View();
         }
 
+        public IActionResult Action()
+        {
+            return View();
+        }
         public IActionResult Shop()
         {
             var results = _repository.GetAllProducts();

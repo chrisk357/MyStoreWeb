@@ -64,6 +64,8 @@ namespace MyStoreWeb
 
                     app.UseHttpsRedirection();
                     app.UseStaticFiles();
+            //After 7 added
+                //    app.UseNodeModules(env);
                     app.UseCookiePolicy();
 
                     app.UseMvc(routes =>

@@ -7,7 +7,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "Chrome",
-    "ProductImage": "~/images/fmffactorypipe.jpg",
+    "ProductImage": "fmffactorypipe",
     "ProductPrice": 233.99
   },
   {
@@ -18,7 +18,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "",
-    "ProductImage": "~/images/fmfgoldseries.jpg",
+    "ProductImage": "fmfgoldseries",
     "ProductPrice": 207.18
   },
   {
@@ -29,7 +29,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "",
-    "ProductImage": "~/images/fmfturbinecore.jpg",
+    "ProductImage": "fmfturbinecore",
     "ProductPrice": 152.99
   },
   {
@@ -40,7 +40,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "",
-    "ProductImage": "~/images/fmffoldseries.jpg",
+    "ProductImage": "fmfgoldseries",
     "ProductPrice": 117.93
   },
   {
@@ -51,7 +51,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "",
-    "ProductImage": "~/images/fmfcoresilencer.jpg",
+    "ProductImage": "fmfcoresilencer",
     "ProductPrice": 121.99
   },
   {
@@ -62,7 +62,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "",
-    "ProductImage": "",
+    "ProductImage": "ravenswivelexhaustspring",
     "ProductPrice": 2.99
   },
   {
@@ -73,7 +73,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "",
-    "ProductImage": "",
+    "ProductImage": "ravenexhaustoringkit",
     "ProductPrice": 4.99
   },
   {
@@ -84,7 +84,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "",
-    "ProductImage": "",
+    "ProductImage": "tuskaluminumpipeguard",
     "ProductPrice": 25.99
   },
   {
@@ -95,7 +95,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "Black/Chrome",
-    "ProductImage": "",
+    "ProductImage": "tuskbrakelever",
     "ProductPrice": 5.99
   },
   {
@@ -106,7 +106,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "Black/Chrome",
-    "ProductImage": "",
+    "ProductImage": "tuskclutchlever",
     "ProductPrice": 3.99
   },
   {
@@ -117,7 +117,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "",
-    "ProductImage": "",
+    "ProductImage": "motionproclutchcable",
     "ProductPrice": 9.89
   },
   {
@@ -128,142 +128,7 @@
     "Description": "",
     "ProductSize": "",
     "ProductColor": "Black/Whtie,Black/Green/Black/Red,Black/Blue,Black/Yellow",
-    "ProductImage": "",
+    "ProductImage": "odiv2emigmxlock",
     "ProductPrice": 24.99
-  },
-  {
-    "Id": 0,
-    "Category": "",
-    "ProductBrand": "",
-    "ProductModel": "",
-    "Description": "",
-    "ProductSize": "",
-    "ProductColor": "",
-    "ProductImage": "",
-    "ProductPrice": ".99"
-  },
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "Acerbis",
-    "ProductModel": "Plastics",
-    "Description": "Replacement Plastics",
-    "ProductSize": "",
-    "ProductColor": "Blue",
-    "ProductImage": "",
-    "ProductPrice": 79.99
-  },
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "Acerbis",
-    "ProductModel": "Plastics",
-    "Description": "Replacement Plastics",
-    "ProductSize": "",
-    "ProductColor": "White",
-    "ProductImage": "",
-    "ProductPrice": 79.99
-  },
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "UFO",
-    "ProductModel": "Hand Guards",
-    "Description": "Heavy Duty Handguards",
-    "ProductSize": "",
-    "ProductColor": "Black",
-    "ProductImage": "",
-    "ProductPrice": 20.99
-  },
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "Pro Circuit",
-    "ProductModel": "Fork Springs",
-    "Description": "Stiffer Aftermarket Supercross Fork Springs",
-    "ProductSize": "",
-    "ProductColor": "",
-    "ProductImage": "",
-    "ProductPrice": 49.99
-  },
-  {
-    "Id": 0,
-    "Category": "Exhaust",
-    "ProductBrand": "FMF",
-    "ProductModel": "Gold Series Pipe",
-    "Description": "",
-    "ProductSize": "",
-    "ProductColor": "",
-    "ProductImage": "~/images/fmffoldseries.jpg",
-    "ProductPrice": 207.18
-  },
-  {
-    "Id": 0,
-    "Category": "Exhaust",
-    "ProductBrand": "FMF",
-    "ProductModel": "Gold Series Pipe",
-    "Description": "",
-    "ProductSize": "",
-    "ProductColor": "",
-    "ProductImage": "~/images/fmffoldseries.jpg",
-    "ProductPrice": 207.18
-  },
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "Brembo",
-    "ProductModel": "Oversized Brake Rotor",
-    "Description": "Oversized Slotted Disc Brake Rotor",
-    "ProductSize": "",
-    "ProductColor": "Silver",
-    "ProductImage": "",
-    "ProductPrice": 119.99
-  },
-
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "Renthal",
-    "ProductModel": "Rear Sprocket",
-    "Description": "Aluminum Rear Sprocket",
-    "ProductSize": "51 Teeth",
-    "ProductColor": "Red",
-    "ProductImage": "",
-    "ProductPrice": 59.99
-  },
-
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "Afam",
-    "ProductModel": "Racing Chain",
-    "Description": "Afam SX Chain",
-    "ProductSize": "120",
-    "ProductColor": "Gold",
-    "ProductImage": "",
-    "ProductPrice": 89.99
-  },
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "RK",
-    "ProductModel": "O Ring Chain",
-    "Description": "RK2 Racing Chain",
-    "ProductSize": "124",
-    "ProductColor": "Gold",
-    "ProductImage": "",
-    "ProductPrice": 129.99
-  },
-
-  {
-    "Id": 0,
-    "Category": "Parts",
-    "ProductBrand": "Tusk",
-    "ProductModel": "Oversized Gas Tank",
-    "Description": "Oversized Alumin Gas Tank",
-    "ProductSize": "3 Gallon",
-    "ProductColor": "Aluminum",
-    "ProductImage": "",
-    "ProductPrice": 159.99
   }
 ]
