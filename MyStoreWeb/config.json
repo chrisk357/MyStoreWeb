@@ -7,7 +7,7 @@
   },
   "Logging": {
     "LogLevel": {
-      "MyStoreWeb": "Information",
+      "Default": "Information",
       "Microsoft": "Warning"
     }
   }

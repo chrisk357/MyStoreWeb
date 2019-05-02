@@ -44,7 +44,7 @@ namespace MyStoreWeb
                 services.AddScoped<IStoreRepository, StoreRepository>();
                 services.AddTransient<IMailService, NullMailService>();
 
-                services.AddMvc(); //.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
            
         }
 
