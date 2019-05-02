@@ -2,15 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\MyStoreWeb",
-    "\\MyStoreWeb\\Controllers",
-    "\\MyStoreWeb\\Data",
-    "\\MyStoreWeb\\Data\\Entities",
-    "\\MyStoreWeb\\Migrations",
-    "\\MyStoreWeb\\Models",
-    "\\MyStoreWeb\\Views",
-    "\\MyStoreWeb\\wwwroot",
-    "\\MyStoreWeb\\wwwroot\\images"
+    "\\MyStoreWeb\\obj",
+    "\\MyStoreWeb\\obj\\Debug",
+    "\\MyStoreWeb\\obj\\Debug\\netcoreapp2.2"
   ],
-  "SelectedNode": "\\MyStoreWeb.sln",
+  "SelectedNode": "\\MyStoreWeb\\obj\\Debug\\netcoreapp2.2\\MyStoreWeb.dll",
   "PreviewInSolutionExplorer": false
 }
