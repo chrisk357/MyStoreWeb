@@ -10,6 +10,7 @@ using MyStoreWeb.Data;
 using MyStoreWeb.Data.Entities;
 using MyStoreWeb.Models;
 using MyStoreWeb.Services;
+using MyStoreWeb.ViewModels;
 
 namespace MyStoreWeb.Controllers
 {
@@ -41,7 +42,7 @@ namespace MyStoreWeb.Controllers
         }
 
         [HttpPost("contact")]
-        public IActionResult Contact(ContactModel model)
+        public IActionResult Contact(ContactViewModel model)
         {
             //Double Checks Validation on Server Side now
             if (ModelState.IsValid)

@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyStoreWeb.Models
+namespace MyStoreWeb.ViewModels
 {
-    public class ContactModel
+    public class ContactViewModel
     {
         [Required]
         [MinLength(3)]

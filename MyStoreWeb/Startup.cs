@@ -44,8 +44,9 @@ namespace MyStoreWeb
                 services.AddScoped<IStoreRepository, StoreRepository>();
                 services.AddTransient<IMailService, NullMailService>();
 
-            services.AddMvc() //.SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-           .AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddMvc() 
+           .AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+           .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
                 // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

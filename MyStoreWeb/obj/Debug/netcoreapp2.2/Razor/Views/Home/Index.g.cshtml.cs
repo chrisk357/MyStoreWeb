@@ -19,22 +19,27 @@ using MyStoreWeb;
 #line default
 #line hidden
 #line 2 "C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\Views\_ViewImports.cshtml"
-using MyStoreWeb.Models;
+using MyStoreWeb.ViewModels;
 
 #line default
 #line hidden
 #line 3 "C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\Views\_ViewImports.cshtml"
-using MyStoreWeb.Controllers;
+using MyStoreWeb.Models;
 
 #line default
 #line hidden
 #line 4 "C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\Views\_ViewImports.cshtml"
+using MyStoreWeb.Controllers;
+
+#line default
+#line hidden
+#line 5 "C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\Views\_ViewImports.cshtml"
 using MyStoreWeb.Data.Entities;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"00de2b596902e6817784ccb0a34abbc5ac66e589", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cebe8050a49691535c3f5f67b13bd4e2326976ab", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"258afe298daf62d0c2fb37e8f18a723a10774475", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/images/fmfgoldseries.jpg"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -72,12 +77,12 @@ using MyStoreWeb.Data.Entities;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(49, 582, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00de2b596902e6817784ccb0a34abbc5ac66e5894573", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "00de2b596902e6817784ccb0a34abbc5ac66e5894731", async() => {
                 BeginContext(55, 41, true);
                 WriteLiteral("\r\n    <div class=\"BikeProduct\">\r\n        ");
                 EndContext();
                 BeginContext(96, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "00de2b596902e6817784ccb0a34abbc5ac66e5894996", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "00de2b596902e6817784ccb0a34abbc5ac66e5895154", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -95,7 +100,7 @@ using MyStoreWeb.Data.Entities;
                 WriteLiteral("\r\n        <ul>Brand: FMF</ul>\r\n        <ul>Product: Gold Series</ul>\r\n        <ul>Description: Chrome Plated</ul>\r\n\r\n\r\n        <button id=\"buyButton\" class=\"btn btn-success\">Add</button>\r\n    </div>   \r\n    <div class=\"BikeProduct\">\r\n\r\n        ");
                 EndContext();
                 BeginContext(380, 42, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "00de2b596902e6817784ccb0a34abbc5ac66e5896504", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "00de2b596902e6817784ccb0a34abbc5ac66e5896662", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
