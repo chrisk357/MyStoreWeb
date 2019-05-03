@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\MyStoreWeb",
-    "\\MyStoreWeb\\obj",
-    "\\MyStoreWeb\\obj\\Debug",
-    "\\MyStoreWeb\\obj\\Debug\\netcoreapp2.2"
+    "\\MyStoreWeb\\obj"
   ],
-  "SelectedNode": "\\MyStoreWeb\\obj\\Debug\\netcoreapp2.2\\MyStoreWeb.dll",
+  "SelectedNode": "\\MyStoreWeb.sln",
   "PreviewInSolutionExplorer": false
 }
