@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyStoreWeb.Data;
+using MyStoreWeb.Data.Entities;
 
 namespace MyStoreWeb.Controllers
 {
@@ -49,6 +50,28 @@ namespace MyStoreWeb.Controllers
                 _logger.LogError($"Failed to get orders: {ex}");
                 return BadRequest("Failed to get orders");
             }
+        }
+        [HttpPost]
+        public IActionResult Post([FromBody]Order model)
+        {
+            //add to the DB
+            try
+            {
+                _repository.AddEntity(model);
+                if(_repository.SaveAll())
+                {
+                    return Created($"/api/orders/{model.Id}", model);
+                }
+                   
+                       
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError($"Failed to save a new order: {ex}");
+
+            }
+            return BadRequest("Failed to save new order");
+
         }
     }
 }
