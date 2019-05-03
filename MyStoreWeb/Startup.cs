@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,14 +33,14 @@ namespace MyStoreWeb
             {
                 cfg.UseSqlServer(_config.GetConnectionString("StoreConnectionString"));
                 });
-
-                services.Configure<CookiePolicyOptions>(options =>
+            services.AddAutoMapper();
+            services.Configure<CookiePolicyOptions>(options =>
                 {
                     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                     options.CheckConsentNeeded = context => true;
                     options.MinimumSameSitePolicy = SameSiteMode.None;
                 });
-
+            
                 services.AddTransient<StoreSeeder>();
                 services.AddScoped<IStoreRepository, StoreRepository>();
                 services.AddTransient<IMailService, NullMailService>();

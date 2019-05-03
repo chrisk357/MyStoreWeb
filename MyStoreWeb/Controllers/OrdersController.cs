@@ -7,6 +7,8 @@ using Microsoft.Extensions.Logging;
 using MyStoreWeb.Data;
 using MyStoreWeb.Data.Entities;
 using MyStoreWeb.ViewModels;
+using AutoMapper;
+using Newtonsoft.Json.Linq;
 
 namespace MyStoreWeb.Controllers
 {
@@ -15,11 +17,14 @@ namespace MyStoreWeb.Controllers
     {
         private readonly IStoreRepository _repository;
         private readonly ILogger<OrdersController> _logger;
+        private readonly IMapper _mapper;
 
-        public OrdersController(IStoreRepository repository, ILogger<OrdersController> logger)
+        public OrdersController(IStoreRepository repository, ILogger<OrdersController> logger,
+            IMapper mapper)
         {
             _repository = repository;
             _logger = logger;
+            _mapper = mapper;
         }
   
         [HttpGet]
@@ -27,7 +32,7 @@ namespace MyStoreWeb.Controllers
         {
             try
             {
-                return Ok(_repository.GetAllOrders());
+                return Ok(_mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel>>(_repository.GetAllOrders()));
             }
             catch(Exception ex)
             {
@@ -41,9 +46,7 @@ namespace MyStoreWeb.Controllers
             try
             {
                 var order = _repository.GetOrderById(id);
-
-                if (order != null)
-                    return Ok(order);
+                if (order != null) return Ok(_mapper.Map<Order, OrderViewModel>(order));
                 else return NotFound();
             }
             catch (Exception ex)
@@ -60,13 +63,17 @@ namespace MyStoreWeb.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var newOrder = new Order()
+                    var newOrder = _mapper.Map<OrderViewModel, Order>(model);
+                        /*
+                         * USe auto mapper instead of this 
+                         * new Order()
                     {
                         OrderDate = model.OrderDate,
                         OrderNumber = model.OrderNumber,
                         Id = model.OrderId
 
                     };
+                    */
 
                     if (newOrder.OrderDate == DateTime.MinValue)
                     {
@@ -75,15 +82,8 @@ namespace MyStoreWeb.Controllers
                     _repository.AddEntity(newOrder);
                     if (_repository.SaveAll())
                     {
-                        var vm = new OrderViewModel()
-                        {
-                            OrderId = newOrder.Id,
-                            OrderDate = newOrder.OrderDate,
-                            OrderNumber = newOrder.OrderNumber
-                        };
-                        {
-                            return Created($"/api/orders/{vm.OrderId}", vm);
-                        }
+                        return Created($"/api/orders/{newOrder.Id}", _mapper.Map<Order, OrderViewModel>(newOrder));
+                        
                     }
                     else
                     {
