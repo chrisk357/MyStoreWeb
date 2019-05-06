@@ -44,6 +44,7 @@ namespace MyStoreWeb.Data
                             UnitPrice = products.First().ProductPrice
                         };
 
+
                     };
                 }
                 _ctx.SaveChanges();

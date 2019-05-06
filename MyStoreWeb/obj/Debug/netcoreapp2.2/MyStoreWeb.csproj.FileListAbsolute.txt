@@ -62,3 +62,4 @@ C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp
 C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.pdb
 C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\Razor\Views\Home\Shop.g.cshtml.cs
+C:\Users\Admin\source\repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.csprojAssemblyReference.cache
