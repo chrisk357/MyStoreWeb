@@ -34,6 +34,7 @@ namespace MyStoreWeb
             services.AddIdentity<StoreUser, IdentityRole>(cfg =>
             {
                 cfg.User.RequireUniqueEmail = true;
+                //can also set up password rules as well by using this
 
             })
             .AddEntityFrameworkStores<StoreContext>();
