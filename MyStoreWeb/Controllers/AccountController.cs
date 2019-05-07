@@ -39,7 +39,7 @@ namespace MyStoreWeb.Controllers
                     model.Password,
                     model.RememberMe,
                     false);
-
+                //False allows you to lock out the accounrt if the incorect un and pw entereed
                 if (result.Succeeded)
                 {
                     if (Request.Query.Keys.Contains("ReturnUrl"))
@@ -56,7 +56,7 @@ namespace MyStoreWeb.Controllers
             ModelState.AddModelError("", "Failed to login");
 
             return View();
-            }
+        }
         [HttpGet]
         public async Task<IActionResult> Logout()
         {

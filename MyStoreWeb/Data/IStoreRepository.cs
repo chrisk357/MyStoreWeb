@@ -11,7 +11,8 @@ namespace MyStoreWeb.Data
         IEnumerable<Product> GetAllProducts();
         IEnumerable<Product> GetProductsByCategory(string category);
 
-        IEnumerable<Order> GetAllOrders();
+        IEnumerable<Order> GetAllOrders(bool includeItems);
+        IEnumerable<Order> GetAllOrdersByUser(bool includeItems);
         Order GetOrderById(int id);
 
         bool SaveAll();
