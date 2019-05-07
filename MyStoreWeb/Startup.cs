@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyStoreWeb.Data;
+using MyStoreWeb.Data.Entities;
 using MyStoreWeb.Services;
 
 namespace MyStoreWeb
@@ -29,11 +31,17 @@ namespace MyStoreWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<StoreUser, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+
+            })
+            .AddEntityFrameworkStores<StoreContext>();
             services.AddDbContext<StoreContext>(cfg =>
             {
                 cfg.UseSqlServer(_config.GetConnectionString("StoreConnectionString"));
                 });
-            services.AddAutoMapper();
+            //services.AddAutoMapper();
             services.Configure<CookiePolicyOptions>(options =>
                 {
                     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -66,6 +74,8 @@ namespace MyStoreWeb
 
                     app.UseHttpsRedirection();
                     app.UseStaticFiles();
+            //Authentication needs to be placed before the MVC one to execute properly
+                    app.UseAuthentication();
             //After 7 added
                 //    app.UseNodeModules(env);
                     app.UseCookiePolicy();

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyStoreWeb.Data;
@@ -60,6 +61,8 @@ namespace MyStoreWeb.Controllers
         {
             return View();
         }
+
+        [Authorize]
         public IActionResult Shop()
         {
             var results = _repository.GetAllProducts();

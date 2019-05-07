@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using MyStoreWeb.Data.Entities;
 using Newtonsoft.Json;
 using System;
@@ -14,15 +15,34 @@ namespace MyStoreWeb.Data
     {
         private readonly IHostingEnvironment _hosting;
         private readonly StoreContext _ctx;
-        public StoreSeeder(StoreContext ctx, IHostingEnvironment hosting)
+        private readonly UserManager<StoreUser> _userManager;
+        public StoreSeeder(StoreContext ctx, IHostingEnvironment hosting, UserManager<StoreUser> userManager)
         {
             _ctx = ctx;
             _hosting = hosting;
+            _userManager = userManager;
         }
 
-        public void Seed()
+        public async Task SeedAsync()
         {
             _ctx.Database.EnsureCreated();
+            StoreUser user = await _userManager.FindByEmailAsync("chris@motostore.com");
+            if(user == null)
+            {
+                user = new StoreUser()
+                {
+                    FirstName = "Chris",
+                    LastName = "Kaye",
+                    Email = "chris@motostore.com",
+                    UserName = "chris@motostore.com"
+                };
+
+                var result = await _userManager.CreateAsync(user, "P@ssw0rd!");
+                if (result != IdentityResult.Success)
+                {
+                    throw new InvalidOperationException("Could not create new user in seeder");
+                }
+            }
 
             if(_ctx.Products.Any())
             {
@@ -35,6 +55,7 @@ namespace MyStoreWeb.Data
                 var order = _ctx.Orders.Where( o => o.Id == 1).FirstOrDefault();
                 if(order != null)
                 {
+                    order.User = user;
                     order.Items = new List<OrderItem>();
                     {
                         new OrderItem()
