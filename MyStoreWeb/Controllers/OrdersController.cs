@@ -28,11 +28,12 @@ namespace MyStoreWeb.Controllers
         }
   
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(bool includeItems = true)
         {
             try
             {
-                return Ok(_mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel>>(_repository.GetAllOrders()));
+                var results = _repository.GetAllOrders(includeItems);
+                return Ok(_mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel>>(results));
             }
             catch(Exception ex)
             {
@@ -79,18 +80,19 @@ namespace MyStoreWeb.Controllers
                     {
                         newOrder.OrderDate = DateTime.Now;
                     }
+
                     _repository.AddEntity(newOrder);
                     if (_repository.SaveAll())
                     {
                         return Created($"/api/orders/{newOrder.Id}", _mapper.Map<Order, OrderViewModel>(newOrder));
-                        
+                    }
                     }
                     else
                     {
                         return BadRequest(ModelState);
                     }
 
-                }
+                
             }
             catch (Exception ex)
             {
