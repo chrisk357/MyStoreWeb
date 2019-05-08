@@ -42,6 +42,7 @@ namespace MyStoreWeb
             services.AddAuthentication()
                 .AddCookie()
                 .AddJwtBearer();
+
             services.AddDbContext<StoreContext>(cfg =>
             {
                 cfg.UseSqlServer(_config.GetConnectionString("StoreConnectionString"));
