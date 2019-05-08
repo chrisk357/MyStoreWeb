@@ -9,10 +9,12 @@ using MyStoreWeb.Data.Entities;
 using MyStoreWeb.ViewModels;
 using AutoMapper;
 using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyStoreWeb.Controllers
 {
     [Route("api/[Controller]")]
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly IStoreRepository _repository;

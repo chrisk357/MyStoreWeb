@@ -38,11 +38,15 @@ namespace MyStoreWeb
 
             })
             .AddEntityFrameworkStores<StoreContext>();
+
+            services.AddAuthentication()
+                .AddCookie()
+                .AddJwtBearer();
             services.AddDbContext<StoreContext>(cfg =>
             {
                 cfg.UseSqlServer(_config.GetConnectionString("StoreConnectionString"));
-                });
-            //services.AddAutoMapper();
+            });
+            services.AddAutoMapper();
             services.Configure<CookiePolicyOptions>(options =>
                 {
                     // This lambda determines whether user consent for non-essential cookies is needed for a given request.
