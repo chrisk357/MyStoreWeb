@@ -169,7 +169,7 @@ exports.DataService = DataService;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div  class=\"row\">\r\n\t<ul>\r\n\t\t<li *ngFor=\"let p of products\">{{ p.title }}: {{ p.price | currency:\"USD\":true }}</li>\r\n\t</ul>\r\n\r\n</div>"
+module.exports = "<div  class=\"row\">\r\n\t<ul>\r\n\t\t<li *ngFor=\"let p of products\">{{ p.ProductBrand }}: {{ p.ProductPrice | currency:\"USD\":true }}</li>\r\n\t</ul>\r\n\r\n</div>"
 
 /***/ }),
 

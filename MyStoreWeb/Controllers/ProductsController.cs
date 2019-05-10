@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyStoreWeb.Data;
@@ -8,23 +11,19 @@ using MyStoreWeb.Data.Entities;
 namespace MyStoreWeb.Controllers
 {
     [Route("api/[Controller]")]
-    [ApiController]
-    //[Produces("application.json")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : Controller
     {
-        private readonly StoreRepository _repository;
+        private readonly IStoreRepository _repository;
         private readonly ILogger<ProductsController> _logger;
 
-        public ProductsController(StoreRepository repository, ILogger<ProductsController> logger)
+        public ProductsController(IStoreRepository repository, ILogger<ProductsController> logger)
         {
             _repository = repository;
             _logger = logger;
         }
 
         [HttpGet]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
-        public ActionResult<IEnumerable<Product>> Get()
+        public ActionResult Get()
         {
             try
             {
