@@ -7,8 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\ts\main.ts" />
-    <Content Remove="wwwroot\ts\storecustomer.ts" />
+    <Content Remove="wwwroot\clientapp\dist\es2015-polyfills.js" />
+    <Content Remove="wwwroot\clientapp\dist\es2015-polyfills.js.map" />
+    <Content Remove="wwwroot\clientapp\dist\favicon.ico" />
+    <Content Remove="wwwroot\clientapp\dist\index.html" />
+    <Content Remove="wwwroot\clientapp\dist\main.js" />
+    <Content Remove="wwwroot\clientapp\dist\main.js.map" />
+    <Content Remove="wwwroot\clientapp\dist\polyfills.js" />
+    <Content Remove="wwwroot\clientapp\dist\polyfills.js.map" />
+    <Content Remove="wwwroot\clientapp\dist\runtime.js" />
+    <Content Remove="wwwroot\clientapp\dist\runtime.js.map" />
+    <Content Remove="wwwroot\clientapp\dist\styles.js" />
+    <Content Remove="wwwroot\clientapp\dist\styles.js.map" />
+    <Content Remove="wwwroot\clientapp\dist\vendor.js" />
+    <Content Remove="wwwroot\clientapp\dist\vendor.js.map" />
   </ItemGroup>
 
 
@@ -18,15 +30,10 @@
     <PackageReference Include="bootstrap" Version="4.3.1" />
     <PackageReference Include="FontAwesome" Version="4.7.0" />
     <PackageReference Include="jQuery.Validation" Version="1.17.0" />
+    <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\ts\main.ts" />
-    <TypeScriptCompile Include="wwwroot\ts\storecustomer.ts" />
   </ItemGroup>
 
 
@@ -45,5 +52,26 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\clientapp\dist\es2015-polyfills.js" />
+    <None Include="wwwroot\clientapp\dist\es2015-polyfills.js.map" />
+    <None Include="wwwroot\clientapp\dist\favicon.ico" />
+    <None Include="wwwroot\clientapp\dist\index.html" />
+    <None Include="wwwroot\clientapp\dist\main.js" />
+    <None Include="wwwroot\clientapp\dist\main.js.map" />
+    <None Include="wwwroot\clientapp\dist\polyfills.js" />
+    <None Include="wwwroot\clientapp\dist\polyfills.js.map" />
+    <None Include="wwwroot\clientapp\dist\runtime.js" />
+    <None Include="wwwroot\clientapp\dist\runtime.js.map" />
+    <None Include="wwwroot\clientapp\dist\styles.js" />
+    <None Include="wwwroot\clientapp\dist\styles.js.map" />
+    <None Include="wwwroot\clientapp\dist\vendor.js" />
+    <None Include="wwwroot\clientapp\dist\vendor.js.map" />
+  </ItemGroup>
+
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="http://json.schemastore.org/package" /></VisualStudio></ProjectExtensions>
 
 </Project>
