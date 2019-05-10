@@ -1,23 +1,11 @@
 ﻿@model IEnumerable<Product>
-<h1>Shop</h1>
-<p>Count: @Model.Count()</p>
-<div class="row">
-@foreach (var p in Model)
-{
-    <div class="col-md-3">
-        <div class="border bg-light rounded p-1">
-            <img src="~/images/@(p.ProductImage).jpg"  class="img-fluid" alt="@p.ProductModel" />
-        
-            <h4>@p.ProductBrand - @p.ProductModel</h4>
-            <ul class="BikeProduct">
-                <li>Brand: @p.Description</li>
-                <li>Brand: @p.ProductColor</li>
-                <li>Product: @p.ProductSize</li>
-                <li>Product: $@p.ProductPrice</li>
-            </ul>
-            <button id="buyButton" class="btn btn-success">Add</button>
-        </div>
+@section Scripts {
+    <script src="~/clientapp/dist/runtime.js"></script>
+    <script src="~/clientapp/dist/polyfills.js"></script>
+    <script src="~/clientapp/dist/styles.js"></script>
+    <script src="~/clientapp/dist/vendor.js"></script>
+    <script src="~/clientapp/dist/main.js"></script>
+}
 
-        </div>        
-    }
-</div>
+<h1>Shop</h1>
+<the-shop></the-shop>

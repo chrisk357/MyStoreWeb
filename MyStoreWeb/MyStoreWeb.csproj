@@ -23,6 +23,11 @@
     <Content Remove="wwwroot\clientapp\dist\vendor.js.map" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\app\shared\dataService.ts" />
+    <None Remove="ClientApp\app\shop\productList.component.ts" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.1.0" />
@@ -69,6 +74,12 @@
     <None Include="wwwroot\clientapp\dist\styles.js.map" />
     <None Include="wwwroot\clientapp\dist\vendor.js" />
     <None Include="wwwroot\clientapp\dist\vendor.js.map" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\shared\dataService.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shop\productList.component.ts" />
   </ItemGroup>
 
 

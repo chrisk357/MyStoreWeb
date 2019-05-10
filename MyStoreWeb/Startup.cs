@@ -58,6 +58,14 @@ namespace MyStoreWeb
                 });
 
 
+            //Not sure if this is correct Added it V1.1
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
+
+
+
             services.AddDbContext<StoreContext>(cfg =>
             {
                 cfg.UseSqlServer(_config.GetConnectionString("StoreConnectionString"));
@@ -103,6 +111,8 @@ namespace MyStoreWeb
                     */
                     app.UseHttpsRedirection();
                     app.UseStaticFiles();
+                    app.UseSpaStaticFiles();
+              //      app.UseNodeModules(env);
             //Authentication needs to be placed before the MVC one to execute properly
                     app.UseAuthentication();
            
