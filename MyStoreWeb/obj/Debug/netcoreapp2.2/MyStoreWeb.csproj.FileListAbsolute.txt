@@ -63,4 +63,3 @@ C:\Users\Admin\source\repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp
 C:\Users\Admin\source\repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.dll
 C:\Users\Admin\source\repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.pdb
 C:\Users\Admin\source\repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.csproj.CopyComplete
-C:\Users\Admin\source\repos\chrisk357\MyStoreWeb\MyStoreWeb\obj\Debug\netcoreapp2.2\MyStoreWeb.csprojAssemblyReference.cache
