@@ -1,7 +1,9 @@
-﻿<h3>Shopping Cart</h3>
-<div>#/Items: {{ data.order.items.length }}</div>
+﻿
+<div class="">
+<h3>Shopping Cart</h3>
+<div>Items: {{ data.order.items.length }}</div>
 <div>Subtotal: {{ data.order.subtotal | currency: "USD":true }}</div>
-<table class="table table-condensed table-hover">
+<table class="table table-condensed table-hover flex-wrap bg-light">
     <thead>
         <tr>
             <td>Product</td>
@@ -19,3 +21,4 @@
         </tr>
     </tbody>
 </table>
+</div>

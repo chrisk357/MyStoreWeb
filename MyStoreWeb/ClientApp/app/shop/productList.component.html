@@ -1,6 +1,6 @@
 ﻿<div class="row">
 
-    <div class="product-info col-md-4 well well-sm"  *ngFor="let p of products">
+    <div class="product-info col-md-4 "  *ngFor="let p of products">
         <div class="card bg-light p-1 m-1"> 
         <img src="/images/{{ p.productImage }}.jpg"  [alt]="p.productImage" />
         <div class="product-name"> {{ p.productBrand }} - {{ p.category }} </div>
