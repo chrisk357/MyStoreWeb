@@ -1,18 +1,19 @@
-﻿export interface Order {
+﻿export class Order {
     orderId: number;
-    orderDate: Date;
+    orderDate: Date = new Date();
     orderNumber: string;
-    items: Item[];
+    items: Array<OrderItem> = new Array<OrderItem>();
 }
 
-export interface Item {
+export class OrderItem {
     id: number;
     quantity: number;
     unitPrice: number;
     productId: number;
     productCategory: string;
+    productBrand: string;
+    productModel: string;
+    productColor: string;
     productSize: string;
-    productTitle: string;
-    productArtist: string;
-    productArtId: string;
 }
+
