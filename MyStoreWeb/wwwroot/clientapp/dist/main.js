@@ -140,9 +140,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
 var core_1 = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 __webpack_require__(/*! rxjs/add/operator/map */ "../node_modules/rxjs-compat/_esm5/add/operator/map.js");
+var order_1 = __webpack_require__(/*! ./order */ "./app/shared/order.ts");
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
+        this.order = new order_1.Order();
         this.products = [];
     }
     DataService.prototype.loadProducts = function () {
@@ -154,6 +156,16 @@ var DataService = /** @class */ (function () {
         });
     };
     DataService.prototype.addtoOrder = function (newProduct) {
+        var item = new order_1.OrderItem();
+        item.productId = newProduct.id;
+        item.productBrand = newProduct.productBrand;
+        item.productModel = newProduct.productModel;
+        item.productCategory = newProduct.category;
+        item.productColor = newProduct.productColor;
+        item.productSize = newProduct.productSize;
+        item.unitPrice = newProduct.productPrice;
+        item.quantity = 1;
+        this.order.items.push(item);
     };
     DataService = __decorate([
         core_1.Injectable(),
@@ -166,6 +178,34 @@ exports.DataService = DataService;
 
 /***/ }),
 
+/***/ "./app/shared/order.ts":
+/*!*****************************!*\
+  !*** ./app/shared/order.ts ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Order = /** @class */ (function () {
+    function Order() {
+        this.orderDate = new Date();
+        this.items = new Array();
+    }
+    return Order;
+}());
+exports.Order = Order;
+var OrderItem = /** @class */ (function () {
+    function OrderItem() {
+    }
+    return OrderItem;
+}());
+exports.OrderItem = OrderItem;
+
+
+/***/ }),
+
 /***/ "./app/shop/cart.component.html":
 /*!**************************************!*\
   !*** ./app/shop/cart.component.html ***!
@@ -173,7 +213,7 @@ exports.DataService = DataService;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Shopping Cart</h3>"
+module.exports = "<h3>Shopping Cart</h3>\r\n<div>Count: {{ data.order.items.length }}</div>"
 
 /***/ }),
 
@@ -234,7 +274,7 @@ module.exports = ".product-info img {\r\n    max-width: 100px;\r\n    float: lef
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4 well well-sm\"  *ngFor=\"let p of products\">\r\n        <div class=\"card bg-light p-1 m-1\"> \r\n        <img src=\"/images/{{ p.productImage }}.jpg\"  [alt]=\"p.productImage\" />\r\n        <div class=\"product-name\"> {{ p.productBrand }} - {{ p.category }} </div>\r\n    <!--    <ul class=\"product-props list-unstyled\">    -->\r\n            <div><strong>Price:</strong> {{ p.productPrice }} </div>\r\n            <div><strong>Model:</strong> {{ p.productModel }}</div>\r\n            <div><strong>Description:</strong> {{ p.description }}</div>\r\n            <div><strong>Color:</strong> {{ p.productColor }}</div>\r\n            <div><strong>Size:</strong> {{ p.productSize }}</div>\r\n\r\n      <!--  </ul>    -->\r\n        <button id=\"buyButton\" class=\"btn btn-success\">Buy</button>\r\n    </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4 well well-sm\"  *ngFor=\"let p of products\">\r\n        <div class=\"card bg-light p-1 m-1\"> \r\n        <img src=\"/images/{{ p.productImage }}.jpg\"  [alt]=\"p.productImage\" />\r\n        <div class=\"product-name\"> {{ p.productBrand }} - {{ p.category }} </div>\r\n    <!--    <ul class=\"product-props list-unstyled\">    -->\r\n            <div><strong>Price:</strong> {{ p.productPrice }} </div>\r\n            <div><strong>Model:</strong> {{ p.productModel }}</div>\r\n            <div><strong>Description:</strong> {{ p.description }}</div>\r\n            <div><strong>Color:</strong> {{ p.productColor }}</div>\r\n            <div><strong>Size:</strong> {{ p.productSize }}</div>\r\n\r\n      <!--  </ul>    -->\r\n        <button id=\"buyButton\" class=\"btn btn-success btn-sm pull-right\" (click)=\"addProduct(p)\">Buy</button>\r\n    </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -262,7 +302,6 @@ var dataService_1 = __webpack_require__(/*! ../shared/dataService */ "./app/shar
 var ProductList = /** @class */ (function () {
     function ProductList(data) {
         this.data = data;
-        this.products = [];
     }
     ProductList.prototype.ngOnInit = function () {
         var _this = this;
@@ -272,6 +311,9 @@ var ProductList = /** @class */ (function () {
                 _this.products = _this.data.products;
             }
         });
+    };
+    ProductList.prototype.addProduct = function (product) {
+        this.data.AddToOrder(product);
     };
     ProductList = __decorate([
         core_1.Component({
