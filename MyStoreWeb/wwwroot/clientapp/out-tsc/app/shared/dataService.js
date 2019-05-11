@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/common/http");
 var core_1 = require("@angular/core");
-var operators_1 = require("rxjs/operators");
+require("rxjs/add/operator/map");
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
@@ -20,10 +20,10 @@ var DataService = /** @class */ (function () {
     DataService.prototype.loadProducts = function () {
         var _this = this;
         return this.http.get("/api/products")
-            .pipe(operators_1.map(function (data) {
+            .map(function (data) {
             _this.products = data;
             return true;
-        }));
+        });
     };
     DataService = __decorate([
         core_1.Injectable(),

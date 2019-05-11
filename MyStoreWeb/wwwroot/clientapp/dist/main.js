@@ -137,7 +137,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
 var core_1 = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-var operators_1 = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
+__webpack_require__(/*! rxjs/add/operator/map */ "../node_modules/rxjs-compat/_esm5/add/operator/map.js");
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
@@ -146,10 +146,10 @@ var DataService = /** @class */ (function () {
     DataService.prototype.loadProducts = function () {
         var _this = this;
         return this.http.get("/api/products")
-            .pipe(operators_1.map(function (data) {
+            .map(function (data) {
             _this.products = data;
             return true;
-        }));
+        });
     };
     DataService = __decorate([
         core_1.Injectable(),
@@ -169,7 +169,7 @@ exports.DataService = DataService;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div  class=\"row\">\r\n\t<ul>\r\n\t\t<li *ngFor=\"let p of products\">{{ p.ProductBrand }}: {{ p.ProductPrice | currency:\"USD\":true }}</li>\r\n\t</ul>\r\n\r\n</div>"
+module.exports = "<div class=\"row\">\r\n    <div class=\"product-info col-md-4\"  *ngFor=\"let p of products\">\r\n        <img src=\"~/images/tuskaluminumpipeguard.jpg\" />\r\n        <h3>{{ p.category }} </h3>\r\n        <ul class=\"product-props\">\r\n            <li>Category: {{ p.category }} </li>\r\n            <li>Brand: {{ p.productBrand }}</li>\r\n            <li>Model: {{ p.productModel }}</li>\r\n            <li>Description: {{ p.description }}</li>\r\n            <li>Price: {{ p.productPrice }}</li>\r\n        </ul>\r\n        <button id=\"buyButton\" class=\"btn btn-success\">Buy</button>\r\n    </div>\r\n\r\n\r\n    <ul>\r\n        <li>{{ p.ProductBrand }}: {{ p.ProductPrice  }}</li>\r\n    </ul>\r\n\r\n</div>"
 
 /***/ }),
 

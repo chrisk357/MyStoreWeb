@@ -1,6 +1,20 @@
-﻿<div  class="row">
-	<ul>
-		<li *ngFor="let p of products">{{ p.ProductBrand }}: {{ p.ProductPrice | currency:"USD":true }}</li>
-	</ul>
+﻿<div class="row">
+    <div class="product-info col-md-4"  *ngFor="let p of products">
+        <img src="~/images/tuskaluminumpipeguard.jpg" />
+        <h3>{{ p.category }} </h3>
+        <ul class="product-props">
+            <li>Category: {{ p.category }} </li>
+            <li>Brand: {{ p.productBrand }}</li>
+            <li>Model: {{ p.productModel }}</li>
+            <li>Description: {{ p.description }}</li>
+            <li>Price: {{ p.productPrice }}</li>
+        </ul>
+        <button id="buyButton" class="btn btn-success">Buy</button>
+    </div>
+
+
+    <ul>
+        <li>{{ p.ProductBrand }}: {{ p.ProductPrice  }}</li>
+    </ul>
 
 </div>
