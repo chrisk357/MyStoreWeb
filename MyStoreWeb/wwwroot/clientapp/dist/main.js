@@ -139,6 +139,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
 var core_1 = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var operators_1 = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
 __webpack_require__(/*! rxjs/add/operator/map */ "../node_modules/rxjs-compat/_esm5/add/operator/map.js");
 var order_1 = __webpack_require__(/*! ./order */ "./app/shared/order.ts");
 var DataService = /** @class */ (function () {
@@ -150,22 +151,28 @@ var DataService = /** @class */ (function () {
     DataService.prototype.loadProducts = function () {
         var _this = this;
         return this.http.get("/api/products")
-            .map(function (data) {
+            .pipe(operators_1.map(function (data) {
             _this.products = data;
             return true;
-        });
+        }));
     };
-    DataService.prototype.addtoOrder = function (newProduct) {
-        var item = new order_1.OrderItem();
-        item.productId = newProduct.id;
-        item.productBrand = newProduct.productBrand;
-        item.productModel = newProduct.productModel;
-        item.productCategory = newProduct.category;
-        item.productColor = newProduct.productColor;
-        item.productSize = newProduct.productSize;
-        item.unitPrice = newProduct.productPrice;
-        item.quantity = 1;
-        this.order.items.push(item);
+    DataService.prototype.AddToOrder = function (product) {
+        var item = this.order.items.find(function (i) { return i.productId == product.id; });
+        if (item) {
+            item.quantity++;
+        }
+        else {
+            item = new order_1.OrderItem();
+            item.productId = product.id;
+            item.productBrand = product.productBrand;
+            item.productModel = product.productModel;
+            item.productCategory = product.category;
+            item.productColor = product.productColor;
+            item.productSize = product.productSize;
+            item.unitPrice = product.productPrice;
+            item.quantity = 1;
+            this.order.items.push(item);
+        }
     };
     DataService = __decorate([
         core_1.Injectable(),
@@ -188,11 +195,20 @@ exports.DataService = DataService;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var _ = __webpack_require__(/*! lodash */ "../node_modules/lodash/lodash.js");
 var Order = /** @class */ (function () {
     function Order() {
         this.orderDate = new Date();
         this.items = new Array();
     }
+    Object.defineProperty(Order.prototype, "subtotal", {
+        get: function () {
+            return _.sum(_.map(this.items, function (i) { return i.unitPrice * i.quantity; }));
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ;
     return Order;
 }());
 exports.Order = Order;
@@ -213,7 +229,7 @@ exports.OrderItem = OrderItem;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Shopping Cart</h3>\r\n<div>Count: {{ data.order.items.length }}</div>"
+module.exports = "<h3>Shopping Cart</h3>\r\n<div>#/Items: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subtotal | currency: \"USD\":true }}</div>\r\n<table class=\"table table-condensed table-hover\">\r\n    <thead>\r\n        <tr>\r\n            <td>Product</td>\r\n            <td>#</td>\r\n            <td>$</td>\r\n            <td>Total</td>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let o of data.order.items\">\r\n            <td>{{ o.productBrand }} -- {{ o.productModel }}</td>\r\n            <td>{{ o.quantity }}</td>\r\n            <td>{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n            <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>"
 
 /***/ }),
 
