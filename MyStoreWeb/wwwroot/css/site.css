@@ -59,7 +59,7 @@ body {
     MY CSS CODE ADDED
 */
 
-
+/*
 .BikeProduct {
     border: 1px solid;    
     display: inline-block;
@@ -82,7 +82,7 @@ menu li {
     menu li:last-of-type::after {
         content: "";
     }
-
+*/
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

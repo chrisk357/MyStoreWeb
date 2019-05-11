@@ -169,7 +169,7 @@ exports.DataService = DataService;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"product-info col-md-4\"  *ngFor=\"let p of products\">\r\n        <img src=\"~/images/tuskaluminumpipeguard.jpg\" />\r\n        <h3>{{ p.category }} </h3>\r\n        <ul class=\"product-props\">\r\n            <li>Category: {{ p.category }} </li>\r\n            <li>Brand: {{ p.productBrand }}</li>\r\n            <li>Model: {{ p.productModel }}</li>\r\n            <li>Description: {{ p.description }}</li>\r\n            <li>Price: {{ p.productPrice }}</li>\r\n        </ul>\r\n        <button id=\"buyButton\" class=\"btn btn-success\">Buy</button>\r\n    </div>\r\n\r\n\r\n    <ul>\r\n        <li>{{ p.ProductBrand }}: {{ p.ProductPrice  }}</li>\r\n    </ul>\r\n\r\n</div>"
+module.exports = "<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4\"  *ngFor=\"let p of products\">\r\n\r\n        <img src=\"/images/{{ p.productImage }}.jpg\" class=\"img-fluid\" [alt]=\"p.productImage\" />\r\n        <h3> {{ p.productBrand }} - {{ p.category }} </h3>\r\n        <ul class=\"product-props\">\r\n            <li><strong>Price:</strong> {{ p.productPrice }} </li>\r\n            <li><strong>Model:</strong> {{ p.productModel }}</li>\r\n            <li><strong>Description:</strong> {{ p.description }}</li>\r\n            <li><strong>Color:</strong> {{ p.productColor }}</li>\r\n            <li><strong>Size:</strong> {{ p.productSize }}</li>\r\n\r\n        </ul>\r\n        <button id=\"buyButton\" class=\"btn btn-success\">Buy</button>\r\n    </div>\r\n\r\n\r\n\r\n\r\n</div>"
 
 /***/ }),
 
