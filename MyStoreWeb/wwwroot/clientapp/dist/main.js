@@ -162,6 +162,17 @@ exports.DataService = DataService;
 
 /***/ }),
 
+/***/ "./app/shop/productList.component.css":
+/*!********************************************!*\
+  !*** ./app/shop/productList.component.css ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".product-info img {\r\n    max-width: 100px;\r\n    float: left;\r\n    margin: 0 2px;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name {\r\n    font-size: large;\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9hcHAvc2hvcC9wcm9kdWN0TGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0lBQ2hCLFdBQVc7SUFDWCxhQUFhO0lBQ2IsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJDbGllbnRBcHAvYXBwL3Nob3AvcHJvZHVjdExpc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0LWluZm8gaW1nIHtcclxuICAgIG1heC13aWR0aDogMTAwcHg7XHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIG1hcmdpbjogMCAycHg7XHJcbiAgICBib3JkZXI6IHNvbGlkIDFweCBibGFjaztcclxufVxyXG5cclxuLnByb2R1Y3QtaW5mbyAucHJvZHVjdC1uYW1lIHtcclxuICAgIGZvbnQtc2l6ZTogbGFyZ2U7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufSJdfQ== */"
+
+/***/ }),
+
 /***/ "./app/shop/productList.component.html":
 /*!*********************************************!*\
   !*** ./app/shop/productList.component.html ***!
@@ -169,7 +180,7 @@ exports.DataService = DataService;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4\"  *ngFor=\"let p of products\">\r\n\r\n        <img src=\"/images/{{ p.productImage }}.jpg\" class=\"img-fluid\" [alt]=\"p.productImage\" />\r\n        <h3> {{ p.productBrand }} - {{ p.category }} </h3>\r\n        <ul class=\"product-props\">\r\n            <li><strong>Price:</strong> {{ p.productPrice }} </li>\r\n            <li><strong>Model:</strong> {{ p.productModel }}</li>\r\n            <li><strong>Description:</strong> {{ p.description }}</li>\r\n            <li><strong>Color:</strong> {{ p.productColor }}</li>\r\n            <li><strong>Size:</strong> {{ p.productSize }}</li>\r\n\r\n        </ul>\r\n        <button id=\"buyButton\" class=\"btn btn-success\">Buy</button>\r\n    </div>\r\n\r\n\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4 well well-sm\"  *ngFor=\"let p of products\">\r\n        <div class=\"card bg-light p-1 m-1\"> \r\n        <img src=\"/images/{{ p.productImage }}.jpg\"  [alt]=\"p.productImage\" />\r\n        <div class=\"product-name\"> {{ p.productBrand }} - {{ p.category }} </div>\r\n    <!--    <ul class=\"product-props list-unstyled\">    -->\r\n            <div><strong>Price:</strong> {{ p.productPrice }} </div>\r\n            <div><strong>Model:</strong> {{ p.productModel }}</div>\r\n            <div><strong>Description:</strong> {{ p.description }}</div>\r\n            <div><strong>Color:</strong> {{ p.productColor }}</div>\r\n            <div><strong>Size:</strong> {{ p.productSize }}</div>\r\n\r\n      <!--  </ul>    -->\r\n        <button id=\"buyButton\" class=\"btn btn-success\">Buy</button>\r\n    </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -211,7 +222,8 @@ var ProductList = /** @class */ (function () {
     ProductList = __decorate([
         core_1.Component({
             selector: "product-list",
-            template: __webpack_require__(/*! ./productList.component.html */ "./app/shop/productList.component.html")
+            template: __webpack_require__(/*! ./productList.component.html */ "./app/shop/productList.component.html"),
+            styles: [__webpack_require__(/*! ./productList.component.css */ "./app/shop/productList.component.css")]
         }),
         __metadata("design:paramtypes", [dataService_1.DataService])
     ], ProductList);

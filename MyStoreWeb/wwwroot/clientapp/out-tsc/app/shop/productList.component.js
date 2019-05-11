@@ -29,7 +29,7 @@ var ProductList = /** @class */ (function () {
         core_1.Component({
             selector: "product-list",
             templateUrl: "productList.component.html",
-            styleUrls: []
+            styleUrls: ["productList.component.css"]
         }),
         __metadata("design:paramtypes", [dataService_1.DataService])
     ], ProductList);
