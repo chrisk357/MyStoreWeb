@@ -8,40 +8,86 @@
 }
 
 
-<div class="col-md-6 offset-md-3">
-    <div class="card card-body bg-light">
-        <form class="ContactForm" method="post">
-            <div asp-validation-summary="ModelOnly"></div>
+    <div class="col-md-6 offset-md-3">
+        <div class="card card-body bg-light">
+            <form class="ContactForm" method="post">
+                <div asp-validation-summary="ModelOnly"></div>
 
-            <div class="form-group">
-                <label asp-for="Name">Name:</label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            
-            <div class="form-group">
-                <label asp-for="Email">Email:</label>
-                <input type="email" asp-for="Email" class="form-control"/>
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="Name">Name:</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email">Email:</label>
+                    <input type="email" asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Subject">Subject:</label>
+                    <input type="text" asp-for="Subject" class="form-control" />
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Message">Message:</label>
+                    <textarea rows="4" asp-for="Message" class="form-control"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Send Message" class="btn btn-primary" />
+                    <div class="text-success">@ViewBag.UserMessage</div>
+                </div>
+            </form>
+        </div>
+
+        <div id="accordion">
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        Collapsible Group Item #1
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum..
+                    </div>
+                </div>
             </div>
 
-            
-            <div class="form-group">
-                <label asp-for="Subject">Subject:</label>
-                <input type="text" asp-for="Subject" class="form-control"/>
-                <span asp-validation-for="Subject" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Message">Message:</label>
-                <textarea rows="4" asp-for="Message" class="form-control"></textarea>
-                <span asp-validation-for="Message" class="text-danger"></span>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                        Collapsible Group Item #2
+                    </a>
+                </div>
+                <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum..
+                    </div>
+                </div>
             </div>
 
-            
-            <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary" />
-                <div class="text-success">@ViewBag.UserMessage</div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                        Collapsible Group Item #3
+                    </a>
+                </div>
+                <div id="collapseThree" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum..
+                    </div>
+                </div>
             </div>
-        </form>
+
+        </div>
+
+
+
     </div>
-</div>
