@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MyStoreWeb"
+    "\\MyStoreWeb",
+    "\\MyStoreWeb\\ClientApp",
+    "\\MyStoreWeb\\ClientApp\\app",
+    "\\MyStoreWeb\\ClientApp\\app\\shared",
+    "\\MyStoreWeb\\wwwroot",
+    "\\MyStoreWeb\\wwwroot\\images"
   ],
   "SelectedNode": "\\MyStoreWeb.sln",
   "PreviewInSolutionExplorer": false
