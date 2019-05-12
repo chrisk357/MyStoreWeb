@@ -1,5 +1,4 @@
-﻿
-<div class="container-fluid">
+﻿<
 
 <h4>Shopping Cart</h4>
 <div>Items: {{ data.order.items.length }}</div>
@@ -23,5 +22,8 @@
         </tr>
     </tbody>
 </table>
-</div>
+<!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->
+<button class="btn btn-success" *ngIf="data.order.items.length > 0" (click)="onCheckout()">Checkout</button>
 
+
+    

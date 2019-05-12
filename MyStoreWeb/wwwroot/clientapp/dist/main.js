@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-9\">\r\n        <h3>{{ title }}</h3>\r\n        <product-list></product-list>\r\n    </div>\r\n    <div class=\"col-md-3\">\r\n        <div class=\"card bg-light p-2\">\r\n        <the-cart></the-cart>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -90,7 +90,16 @@ var http_1 = __webpack_require__(/*! @angular/common/http */ "../node_modules/@a
 var app_component_1 = __webpack_require__(/*! ./app.component */ "./app/app.component.ts");
 var productList_component_1 = __webpack_require__(/*! ./shop/productList.component */ "./app/shop/productList.component.ts");
 var cart_component_1 = __webpack_require__(/*! ./shop/cart.component */ "./app/shop/cart.component.ts");
+var shop_component_1 = __webpack_require__(/*! ./shop/shop.component */ "./app/shop/shop.component.ts");
+var checkout_component_1 = __webpack_require__(/*! ./checkout/checkout.component */ "./app/checkout/checkout.component.ts");
+var login_component_1 = __webpack_require__(/*! ./login/login.component */ "./app/login/login.component.ts");
 var dataService_1 = __webpack_require__(/*! ./shared/dataService */ "./app/shared/dataService.ts");
+var router_1 = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+var routes = [
+    { path: "", component: shop_component_1.Shop },
+    { path: "checkout", component: checkout_component_1.Checkout },
+    { path: "login", component: login_component_1.Login }
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -99,11 +108,18 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 productList_component_1.ProductList,
-                cart_component_1.Cart
+                cart_component_1.Cart,
+                shop_component_1.Shop,
+                checkout_component_1.Checkout,
+                login_component_1.Login
             ],
             imports: [
                 platform_browser_1.BrowserModule,
-                http_1.HttpClientModule
+                http_1.HttpClientModule,
+                router_1.RouterModule.forRoot(routes, {
+                    useHash: true,
+                    enableTracing: false // for Debugging of the Routes
+                })
             ],
             providers: [
                 dataService_1.DataService
@@ -114,6 +130,127 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
+
+
+/***/ }),
+
+/***/ "./app/checkout/checkout.component.css":
+/*!*********************************************!*\
+  !*** ./app/checkout/checkout.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".checkout-thumb {\r\n    max-width: 100px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9hcHAvY2hlY2tvdXQvY2hlY2tvdXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJDbGllbnRBcHAvYXBwL2NoZWNrb3V0L2NoZWNrb3V0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2hlY2tvdXQtdGh1bWIge1xyXG4gICAgbWF4LXdpZHRoOiAxMDBweDtcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./app/checkout/checkout.component.html":
+/*!**********************************************!*\
+  !*** ./app/checkout/checkout.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\r\n    <div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{ errorMessage }}</div>\r\n    <h3>Confirm Order</h3>\r\n    <table class=\"table table-bordered table-hover\">\r\n        <tr *ngFor=\"let o of data.order.items\">\r\n            <td><img src=\"/images/{{ o.productImage }}.jpg\" alt=\"o.productModel\" class=\"img-thumbnail checkout-thumb\" /></td>\r\n            <td>{{ o.productCategory }}({{ o.productBrand }}) - {{ o.productModel }}: {{ o.productDescription }}</td>\r\n            <td>{{ o.quantity }}</td>\r\n            <td>{{ o.unitPrice|currency:'USD':\"symbol\" }}</td>\r\n            <td>{{ (o.unitPrice * o.quantity)|currency:'USD':\"symbol\" }}</td>\r\n        </tr>\r\n    </table>\r\n    <div class=\"col-md-4 col-md-offset-8 text-right\">\r\n        <table class=\"table table-condensed\">\r\n            <tr>\r\n                <td class=\"text-right\">Subtotal</td>\r\n                <td class=\"text-right\">{{ data.order.subtotal|currency:'USD':\"symbol\" }}</td>\r\n            </tr>\r\n            <tr>\r\n                <td class=\"text-right\">Shipping</td>\r\n                <td class=\"text-right\">$ 0.00</td>\r\n            </tr>\r\n            <tr>\r\n                <td class=\"text-right\">Total:</td>\r\n                <td class=\"text-right\">{{ data.order.subtotal|currency:'USD':\"symbol\" }}</td>\r\n            </tr>\r\n        </table>\r\n\r\n        <button class=\"btn btn-success\" (click)=\"onCheckout()\">Complete Purchase</button>\r\n        <a routerLink=\"/\" class=\"btn btn-info\">Cancel</a>\r\n    </div>\r\n\r\n</div>"
+
+/***/ }),
+
+/***/ "./app/checkout/checkout.component.ts":
+/*!********************************************!*\
+  !*** ./app/checkout/checkout.component.ts ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var dataService_1 = __webpack_require__(/*! ../shared/dataService */ "./app/shared/dataService.ts");
+var router_1 = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+var Checkout = /** @class */ (function () {
+    function Checkout(data, router) {
+        this.data = data;
+        this.router = router;
+        this.errorMessage = "";
+    }
+    Checkout.prototype.onCheckout = function () {
+        alert("doing Checkout");
+        /*
+        this.data.checkout()
+            .subscribe(success => {
+                if (success) {
+                    this.router.navigate(["/"]);
+                }
+            }, err => this.errorMessage = "Failed to save order");
+           
+    */ 
+    };
+    Checkout = __decorate([
+        core_1.Component({
+            selector: "checkout",
+            template: __webpack_require__(/*! ./checkout.component.html */ "./app/checkout/checkout.component.html"),
+            styles: [__webpack_require__(/*! ./checkout.component.css */ "./app/checkout/checkout.component.css")]
+        }),
+        __metadata("design:paramtypes", [dataService_1.DataService, router_1.Router])
+    ], Checkout);
+    return Checkout;
+}());
+exports.Checkout = Checkout;
+
+
+/***/ }),
+
+/***/ "./app/login/login.component.html":
+/*!****************************************!*\
+  !*** ./app/login/login.component.html ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-4 offset-md-4\">\r\n        <div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{ errorMessage }}</div>\r\n        <form (submit)=\"onLogin()\" #theForm=\"ngForm\" novalidate>\r\n            <div class=\"form-group\">\r\n                <label for=\"username\">Username</label>\r\n                <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"creds.username\" #username=\"ngModel\" required />\r\n                <div class=\"text-danger\" *ngIf=\"username.touched && username.invalid && username.errors.required\">Username is required!</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"password\">Password</label>\r\n                <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"creds.password\" required #password=\"ngModel\" />\r\n                <div class=\"text-danger\" *ngIf=\"password.touched && password.invalid && password.errors.required\">Password is required!</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <input type=\"submit\" class=\"btn btn-success\" value=\"Login\" [disabled]=\"theForm.invalid\" />\r\n                <a routerLink=\"/\" class=\"btn btn-default\">Cancel</a>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./app/login/login.component.ts":
+/*!**************************************!*\
+  !*** ./app/login/login.component.ts ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var Login = /** @class */ (function () {
+    function Login() {
+    }
+    Login = __decorate([
+        core_1.Component({
+            selector: "login",
+            template: __webpack_require__(/*! ./login.component.html */ "./app/login/login.component.html")
+        })
+    ], Login);
+    return Login;
+}());
+exports.Login = Login;
 
 
 /***/ }),
@@ -145,6 +282,7 @@ var order_1 = __webpack_require__(/*! ./order */ "./app/shared/order.ts");
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
+        this.token = "";
         this.order = new order_1.Order();
         this.products = [];
     }
@@ -156,6 +294,19 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
+    Object.defineProperty(DataService.prototype, "loginRequired", {
+        /*
+        public loadProducts(): Observable<Product[]> {
+            return this.http.get("/api/products")
+                .map((result: Response) => this.products = result.json());
+        }
+        */
+        get: function () {
+            return this.token.length == 0 || this.tokenExpiration > new Date();
+        },
+        enumerable: true,
+        configurable: true
+    });
     DataService.prototype.AddToOrder = function (product) {
         var item = this.order.items.find(function (i) { return i.productId == product.id; });
         if (item) {
@@ -229,7 +380,7 @@ exports.OrderItem = OrderItem;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"container-fluid\">\r\n\r\n<h4>Shopping Cart</h4>\r\n<div>Items: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subtotal | currency: \"USD\":true }}</div>\r\n\r\n<table class=\"table table-condensed table-striped table-sm table-hover bg-light\">\r\n    <thead>\r\n        <tr>\r\n            <td>Product</td>\r\n            <td>#</td>\r\n            <td>$</td>\r\n            <td>Total</td>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let o of data.order.items\">\r\n            <td>{{ o.productBrand }} -- {{ o.productModel }}</td>\r\n            <td>{{ o.quantity }}</td>\r\n            <td>{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n            <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n</div>\r\n\r\n"
+module.exports = "<\r\n\r\n<h4>Shopping Cart</h4>\r\n<div>Items: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subtotal | currency: \"USD\":true }}</div>\r\n\r\n<table class=\"table table-condensed table-striped table-sm table-hover bg-light\">\r\n    <thead>\r\n        <tr>\r\n            <td>Product</td>\r\n            <td>#</td>\r\n            <td>$</td>\r\n            <td>Total</td>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let o of data.order.items\">\r\n            <td>{{ o.productBrand }} -- {{ o.productModel }}</td>\r\n            <td>{{ o.quantity }}</td>\r\n            <td>{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n            <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->\r\n<button class=\"btn btn-success\" *ngIf=\"data.order.items.length > 0\" (click)=\"onCheckout()\">Checkout</button>\r\n\r\n\r\n    "
 
 /***/ }),
 
@@ -254,16 +405,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 var dataService_1 = __webpack_require__(/*! ../shared/dataService */ "./app/shared/dataService.ts");
+var router_1 = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
 var Cart = /** @class */ (function () {
-    function Cart(data) {
+    //could be public or private data. 
+    function Cart(data, router) {
         this.data = data;
+        this.router = router;
     }
+    Cart.prototype.onCheckout = function () {
+        if (this.data.loginRequired) {
+            //Force Login
+            this.router.navigate(["login"]);
+        }
+        else {
+            //Go to checkout
+            this.router.navigate(["checkout"]);
+        }
+    };
     Cart = __decorate([
         core_1.Component({
             selector: "the-cart",
             template: __webpack_require__(/*! ./cart.component.html */ "./app/shop/cart.component.html")
         }),
-        __metadata("design:paramtypes", [dataService_1.DataService])
+        __metadata("design:paramtypes", [dataService_1.DataService, router_1.Router])
     ], Cart);
     return Cart;
 }());
@@ -342,6 +506,50 @@ var ProductList = /** @class */ (function () {
     return ProductList;
 }());
 exports.ProductList = ProductList;
+
+
+/***/ }),
+
+/***/ "./app/shop/shop.component.html":
+/*!**************************************!*\
+  !*** ./app/shop/shop.component.html ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-9\">\r\n        <h3>{{ title }}</h3>\r\n        <product-list></product-list>\r\n    </div>\r\n    <div class=\"col-md-3\">\r\n        <div class=\"card bg-light p-2\">\r\n            <the-cart></the-cart>\r\n        </div>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./app/shop/shop.component.ts":
+/*!************************************!*\
+  !*** ./app/shop/shop.component.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var Shop = /** @class */ (function () {
+    function Shop() {
+    }
+    Shop = __decorate([
+        core_1.Component({
+            selector: "the-shop",
+            template: __webpack_require__(/*! ./shop.component.html */ "./app/shop/shop.component.html")
+        })
+    ], Shop);
+    return Shop;
+}());
+exports.Shop = Shop;
 
 
 /***/ }),
