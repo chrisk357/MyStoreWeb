@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -95,6 +95,7 @@ var checkout_component_1 = __webpack_require__(/*! ./checkout/checkout.component
 var login_component_1 = __webpack_require__(/*! ./login/login.component */ "./app/login/login.component.ts");
 var dataService_1 = __webpack_require__(/*! ./shared/dataService */ "./app/shared/dataService.ts");
 var router_1 = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+var forms_1 = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
 var routes = [
     { path: "", component: shop_component_1.Shop },
     { path: "checkout", component: checkout_component_1.Checkout },
@@ -116,6 +117,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpClientModule,
+                forms_1.FormsModule,
                 router_1.RouterModule.forRoot(routes, {
                     useHash: true,
                     enableTracing: false // for Debugging of the Routes
@@ -185,16 +187,13 @@ var Checkout = /** @class */ (function () {
         this.errorMessage = "";
     }
     Checkout.prototype.onCheckout = function () {
-        alert("doing Checkout");
-        /*
+        var _this = this;
         this.data.checkout()
-            .subscribe(success => {
-                if (success) {
-                    this.router.navigate(["/"]);
-                }
-            }, err => this.errorMessage = "Failed to save order");
-           
-    */ 
+            .subscribe(function (success) {
+            if (success) {
+                _this.router.navigate(["/"]);
+            }
+        }, function (err) { return _this.errorMessage = "Failed to save order"; });
     };
     Checkout = __decorate([
         core_1.Component({
@@ -237,16 +236,44 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+var dataService_1 = __webpack_require__(/*! ../shared/dataService */ "./app/shared/dataService.ts");
+var router_1 = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
 var Login = /** @class */ (function () {
-    function Login() {
+    function Login(data, router) {
+        this.data = data;
+        this.router = router;
+        this.errorMessage = "";
+        this.creds = {
+            username: "chris@motostore.com",
+            password: "P@ssw0rd!"
+        };
     }
+    Login.prototype.onLogin = function () {
+        var _this = this;
+        this.errorMessage = "";
+        this.data.login(this.creds)
+            .subscribe(function (success) {
+            if (success) {
+                if (_this.data.order.items.length == 0) {
+                    _this.router.navigate([""]);
+                }
+                else {
+                    _this.router.navigate(["checkout"]);
+                }
+            }
+        }, function (err) { return _this.errorMessage = "Failed to login"; });
+    };
     Login = __decorate([
         core_1.Component({
             selector: "login",
             template: __webpack_require__(/*! ./login.component.html */ "./app/login/login.component.html")
-        })
+        }),
+        __metadata("design:paramtypes", [dataService_1.DataService, router_1.Router])
     ], Login);
     return Login;
 }());
@@ -283,6 +310,7 @@ var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
         this.token = "";
+        this.tokenExpiration = new Date();
         this.order = new order_1.Order();
         this.products = [];
     }
@@ -307,6 +335,30 @@ var DataService = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    DataService.prototype.login = function (creds) {
+        var _this = this;
+        return this.http.post("/account/createtoken", creds)
+            .pipe(operators_1.map(function (response) {
+            var tokenInfo = response;
+            _this.token = tokenInfo.token;
+            _this.tokenExpiration = tokenInfo.expiration;
+            return true;
+        }));
+    };
+    DataService.prototype.checkout = function () {
+        var _this = this;
+        if (!this.order.orderNumber) {
+            this.order.orderNumber = this.order.orderDate.getFullYear()
+                .toString() + this.order.orderDate.getTime().toString();
+        }
+        return this.http.post("/api/orders", this.order, {
+            headers: new http_1.HttpHeaders({ "Authorization": "Bearer " + this.token })
+        })
+            .pipe(operators_1.map(function (response) {
+            _this.order = new order_1.Order();
+            return true;
+        }));
+    };
     DataService.prototype.AddToOrder = function (product) {
         var item = this.order.items.find(function (i) { return i.productId == product.id; });
         if (item) {
@@ -380,7 +432,7 @@ exports.OrderItem = OrderItem;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<\r\n\r\n<h4>Shopping Cart</h4>\r\n<div>Items: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subtotal | currency: \"USD\":true }}</div>\r\n\r\n<table class=\"table table-condensed table-striped table-sm table-hover bg-light\">\r\n    <thead>\r\n        <tr>\r\n            <td>Product</td>\r\n            <td>#</td>\r\n            <td>$</td>\r\n            <td>Total</td>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let o of data.order.items\">\r\n            <td>{{ o.productBrand }} -- {{ o.productModel }}</td>\r\n            <td>{{ o.quantity }}</td>\r\n            <td>{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n            <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->\r\n<button class=\"btn btn-success\" *ngIf=\"data.order.items.length > 0\" (click)=\"onCheckout()\">Checkout</button>\r\n\r\n\r\n    "
+module.exports = "\r\n<h4>Shopping Cart</h4>\r\n<div>Items: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subtotal | currency: \"USD\":true }}</div>\r\n\r\n<table class=\"table table-condensed table-striped table-sm table-hover bg-light\">\r\n    <thead>\r\n        <tr>\r\n            <td>Product</td>\r\n            <td>#</td>\r\n            <td>$</td>\r\n            <td>Total</td>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let o of data.order.items\">\r\n            <td>{{ o.productBrand }} -- {{ o.productModel }}</td>\r\n            <td>{{ o.quantity }}</td>\r\n            <td>{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n            <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->\r\n<button class=\"btn btn-success\" *ngIf=\"data.order.items.length > 0\" (click)=\"onCheckout()\">Checkout</button>\r\n\r\n\r\n    "
 
 /***/ }),
 
@@ -454,7 +506,7 @@ module.exports = ".product-info img {\r\n    max-width: 100px;\r\n    float: lef
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4 \"  *ngFor=\"let p of products\">\r\n        <div class=\"card bg-light p-1 m-1\"> \r\n        <img src=\"/images/{{ p.productImage }}.jpg\"  [alt]=\"p.productImage\" />\r\n        <div class=\"product-name\"> {{ p.productBrand }} - {{ p.category }} </div>\r\n    <!--    <ul class=\"product-props list-unstyled\">    -->\r\n            <div><strong>Price:</strong> {{ p.productPrice }} </div>\r\n            <div><strong>Model:</strong> {{ p.productModel }}</div>\r\n            <div><strong>Description:</strong> {{ p.description }}</div>\r\n            <div><strong>Color:</strong> {{ p.productColor }}</div>\r\n            <div><strong>Size:</strong> {{ p.productSize }}</div>\r\n\r\n      <!--  </ul>    -->\r\n        <button id=\"buyButton\" class=\"btn btn-success btn-sm pull-right\" (click)=\"addProduct(p)\">Buy</button>\r\n    </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4 \"  *ngFor=\"let p of products\">\r\n        <div class=\"card bg-light p-1 m-1\"> \r\n        <img src=\"/images/{{ p.productImage }}.jpg\"  [alt]=\"p.productImage\" />\r\n        <div class=\"product-name\"> {{ p.productBrand }} - {{ p.category }} </div>\r\n    <!--    <ul class=\"product-props list-unstyled\">    -->\r\n            <div><strong>Price:</strong> {{ p.productPrice }} </div>\r\n            <div><strong>Model:</strong> {{ p.productModel }}</div>\r\n            <div><strong>Description:</strong> {{ p.description }}</div>\r\n            <div><strong>Color:</strong> {{ p.productColor }}</div>\r\n            <div><strong>Size:</strong> {{ p.productSize }}</div>\r\n\r\n      <!--  </ul>    -->\r\n        <button id=\"buyButton\" class=\"btn btn-success btn-sm pull-right\" (click)=\"addProduct(p)\">Buy</button>\r\n    </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -482,6 +534,7 @@ var dataService_1 = __webpack_require__(/*! ../shared/dataService */ "./app/shar
 var ProductList = /** @class */ (function () {
     function ProductList(data) {
         this.data = data;
+        this.products = data.products;
     }
     ProductList.prototype.ngOnInit = function () {
         var _this = this;

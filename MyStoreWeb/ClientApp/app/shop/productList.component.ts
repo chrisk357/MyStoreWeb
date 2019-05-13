@@ -13,7 +13,7 @@ export class ProductList implements OnInit {
     public products: Product[];
 
     constructor(private data: DataService) {
-        
+        this.products = data.products;
     } 
 
     ngOnInit() {

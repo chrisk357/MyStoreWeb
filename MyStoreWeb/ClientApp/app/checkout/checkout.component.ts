@@ -2,6 +2,8 @@
 import { DataService } from '../shared/dataService';
 import { Router } from "@angular/router";
 
+
+
 @Component({
     selector: "checkout",
     templateUrl: "checkout.component.html",
@@ -16,9 +18,6 @@ export class Checkout {
 
 
     onCheckout() {
-        alert("doing Checkout");
-
-        /*
         this.data.checkout()
             .subscribe(success => {
                 if (success) {
@@ -26,5 +25,5 @@ export class Checkout {
                 }
             }, err => this.errorMessage = "Failed to save order");
            
-    */ }
+    }
 }

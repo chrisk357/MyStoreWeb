@@ -19,16 +19,13 @@ var Checkout = /** @class */ (function () {
         this.errorMessage = "";
     }
     Checkout.prototype.onCheckout = function () {
-        alert("doing Checkout");
-        /*
+        var _this = this;
         this.data.checkout()
-            .subscribe(success => {
-                if (success) {
-                    this.router.navigate(["/"]);
-                }
-            }, err => this.errorMessage = "Failed to save order");
-           
-    */ 
+            .subscribe(function (success) {
+            if (success) {
+                _this.router.navigate(["/"]);
+            }
+        }, function (err) { return _this.errorMessage = "Failed to save order"; });
     };
     Checkout = __decorate([
         core_1.Component({

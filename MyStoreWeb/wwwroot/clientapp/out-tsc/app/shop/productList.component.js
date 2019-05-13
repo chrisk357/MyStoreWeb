@@ -14,6 +14,7 @@ var dataService_1 = require("../shared/dataService");
 var ProductList = /** @class */ (function () {
     function ProductList(data) {
         this.data = data;
+        this.products = data.products;
     }
     ProductList.prototype.ngOnInit = function () {
         var _this = this;
