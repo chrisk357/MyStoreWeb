@@ -82,12 +82,12 @@ namespace MyStoreWeb.Controllers
             */
         }
 
-        //Not sure what this does right here may try to remove it or look it up
+        /*Not sure what this does right here may try to remove it or look it up
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
+        */
     }
 }

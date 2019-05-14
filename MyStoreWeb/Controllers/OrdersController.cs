@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Identity;
 namespace MyStoreWeb.Controllers
 {
     [Route("api/[Controller]")]
-    [Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes=JwtBearerDefaults.AuthenticationScheme)]
     public class OrdersController : Controller
     {
         private readonly IStoreRepository _repository;
@@ -91,7 +91,7 @@ namespace MyStoreWeb.Controllers
                         newOrder.OrderDate = DateTime.Now;
                     }
 
-                    var currentUser = await  _userManager
+                    var currentUser = await _userManager
                         .FindByNameAsync(User.Identity.Name);
                     newOrder.User = currentUser;
 

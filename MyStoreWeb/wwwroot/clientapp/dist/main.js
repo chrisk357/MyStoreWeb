@@ -249,13 +249,16 @@ var Login = /** @class */ (function () {
         this.router = router;
         this.errorMessage = "";
         this.creds = {
-            username: "chris@motostore.com",
-            password: "P@ssw0rd!"
+            username: "",
+            password: ""
         };
     }
     Login.prototype.onLogin = function () {
         var _this = this;
-        this.errorMessage = "";
+        /* alert(this.creds.username);
+         alert(this.creds.password);
+         */
+        // this.errorMessage = "";
         this.data.login(this.creds)
             .subscribe(function (success) {
             if (success) {
@@ -266,7 +269,7 @@ var Login = /** @class */ (function () {
                     _this.router.navigate(["checkout"]);
                 }
             }
-        }, function (err) { return _this.errorMessage = "Failed to login"; });
+        }, function (err) { return _this.errorMessage = "LOGIN FAILED"; });
     };
     Login = __decorate([
         core_1.Component({
@@ -345,20 +348,47 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
+    /*
+    login(creds): Observable<boolean> {
+        return this.http.post("/account/createtoken", creds)
+            .map((data: any) => {
+                this.token = data.token;
+                this.tokenExpiration = data.expiration;
+                return true;
+            });
+    }
+    */
     DataService.prototype.checkout = function () {
         var _this = this;
+        if (!this.order.orderNumber) {
+            this.order.orderNumber = this.order.orderDate.getFullYear().toString()
+                + this.order.orderDate.getTime().toString();
+        }
+        return this.http.post("/api/orders", this.order, {
+            headers: new http_1.HttpHeaders().set("Authorization", "Bearer " + this.token)
+        })
+            .map(function (response) {
+            _this.order = new order_1.Order();
+            return true;
+        });
+    };
+    /* TRYING TO SWITCH CODE BC ITS NOT WORKING
+    public checkout() {
         if (!this.order.orderNumber) {
             this.order.orderNumber = this.order.orderDate.getFullYear()
                 .toString() + this.order.orderDate.getTime().toString();
         }
+
         return this.http.post("/api/orders", this.order, {
-            headers: new http_1.HttpHeaders({ "Authorization": "Bearer " + this.token })
+            headers: new HttpHeaders({ "Authorization": "Bearer " + this.token })
         })
-            .pipe(operators_1.map(function (response) {
-            _this.order = new order_1.Order();
-            return true;
-        }));
-    };
+            .pipe(
+                map(response => {
+                    this.order = new Order();
+                    return true;
+                }));
+    }
+*/
     DataService.prototype.AddToOrder = function (product) {
         var item = this.order.items.find(function (i) { return i.productId == product.id; });
         if (item) {

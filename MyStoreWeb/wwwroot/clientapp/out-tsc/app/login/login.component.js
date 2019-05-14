@@ -18,13 +18,16 @@ var Login = /** @class */ (function () {
         this.router = router;
         this.errorMessage = "";
         this.creds = {
-            username: "chris@motostore.com",
-            password: "P@ssw0rd!"
+            username: "",
+            password: ""
         };
     }
     Login.prototype.onLogin = function () {
         var _this = this;
-        this.errorMessage = "";
+        /* alert(this.creds.username);
+         alert(this.creds.password);
+         */
+        // this.errorMessage = "";
         this.data.login(this.creds)
             .subscribe(function (success) {
             if (success) {
@@ -35,7 +38,7 @@ var Login = /** @class */ (function () {
                     _this.router.navigate(["checkout"]);
                 }
             }
-        }, function (err) { return _this.errorMessage = "Failed to login"; });
+        }, function (err) { return _this.errorMessage = "LOGIN FAILED"; });
     };
     Login = __decorate([
         core_1.Component({

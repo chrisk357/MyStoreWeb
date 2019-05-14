@@ -21,7 +21,7 @@ var Cart = /** @class */ (function () {
     Cart.prototype.onCheckout = function () {
         if (this.data.loginRequired) {
             //Force Login
-            this.router.navigate(["checkout"]);
+            this.router.navigate(["login"]);
         }
         else {
             //Go to checkout

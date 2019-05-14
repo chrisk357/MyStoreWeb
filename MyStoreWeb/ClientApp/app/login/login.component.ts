@@ -15,12 +15,15 @@ export class Login {
 
     errorMessage: string = "";
     public creds = {
-        username: "chris@motostore.com",
-        password: "P@ssw0rd!"
+        username: "",
+        password: ""
     };
 
     onLogin() {
-        this.errorMessage = "";
+       /* alert(this.creds.username);
+        alert(this.creds.password);
+        */
+       // this.errorMessage = "";
         this.data.login(this.creds)
             .subscribe(success => {
                 if (success) {
@@ -30,7 +33,7 @@ export class Login {
             this.router.navigate(["checkout"]);
                 }
             }
-        }, err => this.errorMessage = "Failed to login");
-
+        }, err => this.errorMessage = "LOGIN FAILED");
+        
     }
 }
