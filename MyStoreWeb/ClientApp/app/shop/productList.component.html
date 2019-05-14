@@ -1,9 +1,9 @@
 ﻿<div class="row">
 
-    <div class="product-info col-md-4 "  *ngFor="let p of products">
+    <div class="product-info col-md-3 "  *ngFor="let p of products">
         <div class="card bg-light p-1 m-1"> 
         <img src="/images/{{ p.productImage }}.jpg"  [alt]="p.productImage" />
-        <div class="product-name"> {{ p.productBrand }} - {{ p.category }} </div>
+        <div class="product-name float-right" > {{ p.productBrand }}-{{ p.category }} </div>
     <!--    <ul class="product-props list-unstyled">    -->
             <div><strong>Price:</strong> {{ p.productPrice }} </div>
             <div><strong>Model:</strong> {{ p.productModel }}</div>

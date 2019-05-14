@@ -1,11 +1,12 @@
 ﻿.product-info img {
-    max-width: 100px;
-    float: left;
-    margin: 0 2px;
+    max-width: 60px;
+   
+    margin: 0;
     border: solid 1px black;
 }
 
 .product-info .product-name {
-    font-size: large;
     font-weight: bold;
+    
+
 }
