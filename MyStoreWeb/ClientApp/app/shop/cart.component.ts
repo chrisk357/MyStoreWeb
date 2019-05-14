@@ -12,12 +12,12 @@ import { Router } from "@angular/router";
 export class Cart {
 
     //could be public or private data. 
-    constructor(public data: DataService, private router: Router) { }
+    constructor(private data: DataService, private router: Router) { }
 
     onCheckout() {
         if (this.data.loginRequired) {
             //Force Login
-            this.router.navigate(["checkout"]);
+            this.router.navigate(["login"]);
         } else {
             //Go to checkout
             this.router.navigate(["checkout"]);

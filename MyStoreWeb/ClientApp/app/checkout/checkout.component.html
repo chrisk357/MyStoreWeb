@@ -10,7 +10,7 @@
         </thead>
         <tr *ngFor="let o of data.order.items">
           <!--  <td><img src="/images/{{ o.productImage }}.jpg" class="img-thumbnail checkout-thumb" /></td>  -->
-            <td>{{ o.productBrand }}: {{ o.productModel }}-{{ o.productSize }}-{{o.productColor}}</td>
+            <td>{{ o.productBrand }} {{ o.productModel }} {{ o.productSize }} {{o.productColor}}</td>
             <td>{{ o.quantity }}</td>
             <td>{{ o.unitPrice|currency:'USD':"symbol" }}</td>
             <td>{{ (o.unitPrice * o.quantity)|currency:'USD':"symbol" }}</td>
