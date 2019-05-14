@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using MyStoreWeb.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,17 @@ namespace MyStoreWeb.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            
+
+            builder.Entity<Product>()
+                .Property(p => p.ProductPrice)
+                .HasColumnType("decimal(18,2)");
+
+            builder.Entity<OrderItem>()
+                .Property(p => p.UnitPrice)
+                .HasColumnType("decimal(18,2)");
+
             //THis may need to be removed after 7
+            /*
             builder.Entity<Order>()
                 .HasData(new Order()
                 {
@@ -30,6 +40,8 @@ namespace MyStoreWeb.Data
                   OrderDate = DateTime.UtcNow,
                   OrderNumber = "1234"
                 });
+                */
         }
+
     }
 }

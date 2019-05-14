@@ -25,7 +25,8 @@ namespace MyStoreWeb.Controllers
         private readonly IConfiguration _config;
 
         public AccountController(ILogger<AccountController> logger,
-            SignInManager<StoreUser> signInManager, UserManager<StoreUser> userManager,
+            SignInManager<StoreUser> signInManager, 
+            UserManager<StoreUser> userManager,
             IConfiguration config)
         {
             _logger = logger;
@@ -33,6 +34,7 @@ namespace MyStoreWeb.Controllers
             _userManager = userManager;
             _config = config;
         }
+
         public IActionResult Login()
         {
             if (this.User.Identity.IsAuthenticated)
@@ -42,6 +44,8 @@ namespace MyStoreWeb.Controllers
 
             return View();
         }
+
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -59,7 +63,6 @@ namespace MyStoreWeb.Controllers
                     if (Request.Query.Keys.Contains("ReturnUrl"))
                     {
                         return Redirect(Request.Query["ReturnUrl"].First());
-
                     }
                     else
                     {
@@ -71,6 +74,8 @@ namespace MyStoreWeb.Controllers
 
             return View();
         }
+
+
         [HttpGet]
         public async Task<IActionResult> Logout()
         {
@@ -93,7 +98,7 @@ namespace MyStoreWeb.Controllers
                     {
                         // Create the token
                         var claims = new[]
-                                    {
+                        {
                             new Claim (JwtRegisteredClaimNames.Sub, user.Email),
                             new Claim (JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                             new Claim (JwtRegisteredClaimNames.UniqueName, user.UserName)

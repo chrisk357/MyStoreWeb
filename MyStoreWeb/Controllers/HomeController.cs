@@ -49,7 +49,8 @@ namespace MyStoreWeb.Controllers
             if (ModelState.IsValid)
             {
                 //Send Email
-                _mailService.SendMessage("chrisk357@gmail.com", model.Subject, $"From: {model.Name} - {model.Email}, Message: {model.Message}");
+                _mailService.SendMessage("chrisk357@gmail.com", 
+                    model.Subject, $"From: {model.Name} - {model.Email}, Message: {model.Message}");
                 ViewBag.UserMessage = "Message Sent!!";
                 ModelState.Clear();
             }
@@ -57,8 +58,9 @@ namespace MyStoreWeb.Controllers
             return View();
         }
 
-        public IActionResult Action()
+        public IActionResult About()
         {
+            ViewBag.Title = "About Us";
             return View();
         }
 
@@ -80,11 +82,12 @@ namespace MyStoreWeb.Controllers
             */
         }
 
-
+        //Not sure what this does right here may try to remove it or look it up
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

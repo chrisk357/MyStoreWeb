@@ -49,12 +49,14 @@ namespace MyStoreWeb.Controllers
                 return BadRequest("Failed to get orders");
             }
         }
+
         [HttpGet("{id:int}")]
         public IActionResult Get(int id)
         {
             try
             {
                 var order = _repository.GetOrderById(User.Identity.Name, id);
+
                 if (order != null) return Ok(_mapper.Map<Order, OrderViewModel>(order));
                 else return NotFound();
             }
@@ -89,13 +91,15 @@ namespace MyStoreWeb.Controllers
                         newOrder.OrderDate = DateTime.Now;
                     }
 
-                    var currentUser = await  _userManager.FindByNameAsync(User.Identity.Name);
+                    var currentUser = await  _userManager
+                        .FindByNameAsync(User.Identity.Name);
                     newOrder.User = currentUser;
 
-                    _repository.AddEntity(newOrder);
+                    _repository.AddOrder(newOrder);
                     if (_repository.SaveAll())
                     {
-                        return Created($"/api/orders/{newOrder.Id}", _mapper.Map<Order, OrderViewModel>(newOrder));
+                        return Created($"/api/orders/{newOrder.Id}",
+                            _mapper.Map<Order, OrderViewModel>(newOrder));
                     }
                     }
                     else
@@ -113,5 +117,6 @@ namespace MyStoreWeb.Controllers
             return BadRequest("Failed to save new order");
 
         }
+
     }
 }

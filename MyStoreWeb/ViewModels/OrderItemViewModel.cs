@@ -11,10 +11,11 @@ namespace MyStoreWeb.ViewModels
         public decimal UnitPrice { get; set; }
         [Required]
         public int ProductId { get; set; }
+
         public string ProductCategory { get; set; }
-        public string ProductSize { get; set; }
-        public string ProductTitle { get; set; }
-        public string ProductArtist { get; set; }
+        public string ProductProductSize { get; set; }
+        public string ProductProductModel { get; set; }
+        public string ProductProductBrand { get; set; }
         public string ProductProductImage { get; set; }
 
     }

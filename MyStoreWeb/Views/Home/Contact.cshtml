@@ -5,91 +5,95 @@
 @section Scripts {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 }
 
 
-    <div class="col-md-6 offset-md-3">
-        <div class="card card-body bg-light">
-            <form class="ContactForm" method="post">
-                <div asp-validation-summary="ModelOnly"></div>
+<div class="col-md-6 offset-md-3">
+    <div class="card card-body bg-light">
+        <form class="ContactForm" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
 
-                <div class="form-group">
-                    <label asp-for="Name">Name:</label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+            <div class="form-group">
+                <label asp-for="Name">Name:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">Email:</label>
+                <input type="email" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Subject">Subject:</label>
+                <input type="text" asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Message">Message:</label>
+                <textarea rows="9" asp-for="Message" class="form-control"></textarea>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary" />
+                <div class="text-success">@ViewBag.UserMessage</div>
+            </div>
+        </form>
+    </div>
+
+    <div id="accordion">
+
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    Contact Us By Phone
+                </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                    Mobile:  (832)123-4567 <br />
+                    Home:  (832)987-6543
                 </div>
-
-                <div class="form-group">
-                    <label asp-for="Email">Email:</label>
-                    <input type="email" asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group">
-                    <label asp-for="Subject">Subject:</label>
-                    <input type="text" asp-for="Subject" class="form-control" />
-                    <span asp-validation-for="Subject" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Message">Message:</label>
-                    <textarea rows="4" asp-for="Message" class="form-control"></textarea>
-                    <span asp-validation-for="Message" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group">
-                    <input type="submit" value="Send Message" class="btn btn-primary" />
-                    <div class="text-success">@ViewBag.UserMessage</div>
-                </div>
-            </form>
+            </div>
         </div>
 
-        <div id="accordion">
-
-            <div class="card">
-                <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                        Contact Us By Phone 
-                    </a>
-                </div>
-                <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                    <div class="card-body">
-                        Mobile:  (832)22X-5XXX <br />
-                        Home:  (832)22X-5XXX
-                    </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                    Contact Us By Mail
+                </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    10357 Selling Point Dr.
+                    <br />MyCity, TX 12345
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                        Contact Us By Mail
-                    </a>
-                </div>
-                <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                        10357 Selling Point Dr.
-                        <br />MyCity, TX 12345
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                        Live Chat
-                    </a>
-                </div>
-                <div id="collapseThree" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                        Coming Soon...
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                    Live Chat
+                </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    Coming Soon...
+                </div>
+            </div>
+        </div>
 
     </div>
+
+
+
+</div>

@@ -13,9 +13,10 @@ namespace MyStoreWeb.Data
 {
     public class StoreSeeder
     {
-        private readonly IHostingEnvironment _hosting;
         private readonly StoreContext _ctx;
+        private readonly IHostingEnvironment _hosting;
         private readonly UserManager<StoreUser> _userManager;
+
         public StoreSeeder(StoreContext ctx, IHostingEnvironment hosting, UserManager<StoreUser> userManager)
         {
             _ctx = ctx;
@@ -26,13 +27,14 @@ namespace MyStoreWeb.Data
         public async Task SeedAsync()
         {
             _ctx.Database.EnsureCreated();
+            //Seed the main user
             StoreUser user = await _userManager.FindByEmailAsync("chris@motostore.com");
             if(user == null)
             {
                 user = new StoreUser()
                 {
-                    FirstName = "Chris",
                     LastName = "Kaye",
+                    FirstName = "Chris",                    
                     Email = "chris@motostore.com",
                     UserName = "chris@motostore.com"
                 };
@@ -40,11 +42,11 @@ namespace MyStoreWeb.Data
                 var result = await _userManager.CreateAsync(user, "P@ssw0rd!");
                 if (result != IdentityResult.Success)
                 {
-                    throw new InvalidOperationException("Could not create new user in seeder");
+                    throw new InvalidOperationException("Could not create new user in Seeding");
                 }
             }
 
-            if(_ctx.Products.Any())
+            if(!_ctx.Products.Any())
             {
                 //Need to create sample data
                 var filepath = Path.Combine(_hosting.ContentRootPath, "Data/product.json");
@@ -56,14 +58,14 @@ namespace MyStoreWeb.Data
                 if(order != null)
                 {
                     order.User = user;
-                    order.Items = new List<OrderItem>();
+                    order.Items = new List<OrderItem>()
                     {
                         new OrderItem()
                         {
                             Product = products.First(),
                             Quantity = 5,
                             UnitPrice = products.First().ProductPrice
-                        };
+                        }
 
 
                     };
