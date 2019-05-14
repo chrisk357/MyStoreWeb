@@ -17,7 +17,7 @@ export class Cart {
     onCheckout() {
         if (this.data.loginRequired) {
             //Force Login
-            this.router.navigate(["login"]);
+            this.router.navigate(["checkout"]);
         } else {
             //Go to checkout
             this.router.navigate(["checkout"]);
@@ -25,3 +25,9 @@ export class Cart {
     }
 
 }
+
+/*
+ * If i change this.router.navatee to checkout from login it works however 
+ * It allows you to get to the checkout screen without being logged in
+ * So Angular is not realizing that I am logged
+*/

@@ -154,7 +154,7 @@ module.exports = ".checkout-thumb {\r\n    max-width: 100px;\r\n}\r\n\r\n/*# sou
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{ errorMessage }}</div>\r\n    <h3>Confirm Order</h3>\r\n    <table class=\"table table-bordered table-hover\">\r\n        <tr *ngFor=\"let o of data.order.items\">\r\n            <td><img src=\"/images/{{ o.productImage }}.jpg\" alt=\"o.productModel\" class=\"img-thumbnail checkout-thumb\" /></td>\r\n            <td>{{ o.productCategory }}({{ o.productBrand }}) - {{ o.productModel }}: {{ o.productDescription }}</td>\r\n            <td>{{ o.quantity }}</td>\r\n            <td>{{ o.unitPrice|currency:'USD':\"symbol\" }}</td>\r\n            <td>{{ (o.unitPrice * o.quantity)|currency:'USD':\"symbol\" }}</td>\r\n        </tr>\r\n    </table>\r\n    <div class=\"col-md-4 col-md-offset-8 text-right\">\r\n        <table class=\"table table-condensed\">\r\n            <tr>\r\n                <td class=\"text-right\">Subtotal</td>\r\n                <td class=\"text-right\">{{ data.order.subtotal|currency:'USD':\"symbol\" }}</td>\r\n            </tr>\r\n            <tr>\r\n                <td class=\"text-right\">Shipping</td>\r\n                <td class=\"text-right\">$ 0.00</td>\r\n            </tr>\r\n            <tr>\r\n                <td class=\"text-right\">Total:</td>\r\n                <td class=\"text-right\">{{ data.order.subtotal|currency:'USD':\"symbol\" }}</td>\r\n            </tr>\r\n        </table>\r\n\r\n        <button class=\"btn btn-success\" (click)=\"onCheckout()\">Complete Purchase</button>\r\n        <a routerLink=\"/\" class=\"btn btn-info\">Cancel</a>\r\n    </div>\r\n\r\n</div>"
+module.exports = "<div class=\"row\">\r\n    <div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{ errorMessage }}</div>\r\n    <h3>Confirm Order</h3>\r\n    <table class=\"table table-bordered table-hover\">\r\n        <tr *ngFor=\"let o of data.order.items\">\r\n            <td><img src=\"/images/{{ o.productImage }}.jpg\" class=\"img-thumbnail checkout-thumb\" /></td>\r\n            <td>{{ o.productBrand }} - {{ o.productModel }}: {{ o.productDescription }}</td>\r\n            <td>{{ o.quantity }}</td>\r\n            <td>{{ o.unitPrice|currency:'USD':\"symbol\" }}</td>\r\n            <td>{{ (o.unitPrice * o.quantity)|currency:'USD':\"symbol\" }}</td>\r\n        </tr>\r\n    </table>\r\n    <div class=\"col-md-4 col-md-offset-8 text-right\">\r\n        <table class=\"table table-condensed\">\r\n            <tr>\r\n                <td class=\"text-right\">Subtotal:</td>\r\n                <td class=\"text-right\">{{ data.order.subtotal|currency:'USD':\"symbol\" }}</td>\r\n            </tr>\r\n            <tr>\r\n                <td class=\"text-right\">Shipping:</td>\r\n                <td class=\"text-right\">$ 0.00</td>\r\n            </tr>\r\n            <tr>\r\n                <td class=\"text-right\">Tax:</td>\r\n                <td class=\"text-right\">{{ (data.order.subtotal * .08)|currency:'USD':\"symbol\"}}</td>\r\n\r\n            </tr>\r\n            <tr>\r\n                <td class=\"text-right\">Total:</td>\r\n                <td class=\"text-right\">{{ (data.order.subtotal * .08) + data.order.subtotal|currency:'USD':\"symbol\" }}</td>\r\n            </tr>\r\n        </table>\r\n\r\n        <button class=\"btn btn-success\" (click)=\"onCheckout()\">Complete Purchase</button>\r\n        <a routerLink=\"/\" class=\"btn btn-info\">Cancel</a>\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -467,7 +467,7 @@ var Cart = /** @class */ (function () {
     Cart.prototype.onCheckout = function () {
         if (this.data.loginRequired) {
             //Force Login
-            this.router.navigate(["login"]);
+            this.router.navigate(["checkout"]);
         }
         else {
             //Go to checkout
@@ -484,6 +484,11 @@ var Cart = /** @class */ (function () {
     return Cart;
 }());
 exports.Cart = Cart;
+/*
+ * If i change this.router.navatee to checkout from login it works however
+ * It allows you to get to the checkout screen without being logged in
+ * So Angular is not realizing that I am logged
+*/ 
 
 
 /***/ }),

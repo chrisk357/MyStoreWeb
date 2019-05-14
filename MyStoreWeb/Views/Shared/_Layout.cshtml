@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    @*
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     </environment>
@@ -20,13 +20,15 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
 
+
+        *@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 
 
 <body>
     <header class="container">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
             <a class="navbar-brand" href="#">
                 <img src="~/images/dungey.jpg" class="rounded-circle" alt="Logo" style="width:40px;" />
             </a>
@@ -54,6 +56,8 @@
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
                     </li>
 
+
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
@@ -66,6 +70,9 @@
                             <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
                         </li>
                     }
+
+
+
 
 
 
@@ -101,16 +108,17 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">CR-F</a>
                                 <a class="dropdown-item" href="#">CR-F WE</a>
+                                <a class="dropdown-item" href="#">CR</a>
                             </div>
                         </div>
                     </div>
 
-                    @*
-                        <form class="form-inline" action="/action_page.php">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                            <button class="btn btn-success" type="submit">Search</button>
+                    
+                        <form class="d-sm-inline-flex"  action="#">
+                            <input class="form-control mr-sm-1" type="text" placeholder="Search">
+                            <button class="btn btn-success small" type="submit">Search</button>
                         </form>
-                    *@
+                    
                 </ul>
 
 
