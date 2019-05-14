@@ -96,14 +96,17 @@ namespace MyStoreWeb.Controllers
 
                     if (result.Succeeded)
                     {
-                        // Create the token
+                        // Create the token system.security.claims
                         var claims = new[]
                         {
+                         //  System.IdentityModel.Tokens.Jwt; sub= name of the subject and the user email isbeing used
                             new Claim (JwtRegisteredClaimNames.Sub, user.Email),
+                            // Jti a unique string representative of each token
                             new Claim (JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                            // The user name of the user thats maps to the identity inside the user object
                             new Claim (JwtRegisteredClaimNames.UniqueName, user.UserName)
                         };
-
+                        // The secret used to encrypt the token
                         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
                         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
@@ -111,7 +114,7 @@ namespace MyStoreWeb.Controllers
                             _config["Tokens:Issuer"],
                             _config["Tokens:Audience"],
                             claims,
-                            expires: DateTime.Now.AddMinutes(30),
+                            expires: DateTime.UtcNow.AddMinutes(30),
                             signingCredentials: creds);
 
                         var results = new
@@ -120,7 +123,7 @@ namespace MyStoreWeb.Controllers
                             expiration = token.ValidTo
                         };
 
-                        return Created("", "results");
+                        return Created("", results);
                     }
                 }
             }
