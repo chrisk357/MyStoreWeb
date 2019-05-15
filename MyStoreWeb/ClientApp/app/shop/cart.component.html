@@ -15,7 +15,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let o of data.order.items">
-                <td>{{ o.productBrand }}-{{ o.productModel }}</td>
+                <td>{{ o.productBrand }}----{{ o.productModel }}</td>
                 <td>{{ o.quantity }}</td>
                 <td>{{ o.unitPrice | currency:"USD":true }}</td>
                 <td>{{ (o.unitPrice * o.quantity) | currency:"USD":true }}</td>
