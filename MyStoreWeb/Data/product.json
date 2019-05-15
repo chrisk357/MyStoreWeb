@@ -17,7 +17,7 @@
     "ProductModel": "Gold Series Pipe",
     "Description": "",
     "ProductSize": "",
-    "ProductColor": "",
+    "ProductColor": "Chrome",
     "ProductImage": "fmfgoldseries",
     "ProductPrice": 207.18
   },
@@ -28,7 +28,7 @@
     "ProductModel": "Turbine Core II Silencer",
     "Description": "",
     "ProductSize": "",
-    "ProductColor": "",
+    "ProductColor": "Chrome",
     "ProductImage": "fmfturbinecore",
     "ProductPrice": 152.99
   },
@@ -39,7 +39,7 @@
     "ProductModel": "Power Core II Shorty Silencer",
     "Description": "",
     "ProductSize": "",
-    "ProductColor": "",
+    "ProductColor": "Chrome",
     "ProductImage": "fmfgoldseries",
     "ProductPrice": 117.93
   },
@@ -50,7 +50,7 @@
     "ProductModel": "Power Core II Silencer",
     "Description": "",
     "ProductSize": "",
-    "ProductColor": "",
+    "ProductColor": "Chrome",
     "ProductImage": "fmfcoresilencer",
     "ProductPrice": 121.99
   },
@@ -61,7 +61,7 @@
     "ProductModel": "Swivel Exhaust Spring",
     "Description": "",
     "ProductSize": "",
-    "ProductColor": "",
+    "ProductColor": "Gold",
     "ProductImage": "ravenswivelexhaustspring",
     "ProductPrice": 2.99
   },
@@ -72,7 +72,7 @@
     "ProductModel": "Exhaust O-ring Kit",
     "Description": "",
     "ProductSize": "",
-    "ProductColor": "",
+    "ProductColor": "Black",
     "ProductImage": "ravenexhaustoringkit",
     "ProductPrice": 4.99
   },
@@ -83,7 +83,7 @@
     "ProductModel": "Aluminum Pipe Guard",
     "Description": "",
     "ProductSize": "",
-    "ProductColor": "",
+    "ProductColor": "Silver",
     "ProductImage": "tuskaluminumpipeguard",
     "ProductPrice": 25.99
   },
@@ -116,7 +116,7 @@
     "ProductModel": "Clutch Cable",
     "Description": "",
     "ProductSize": "",
-    "ProductColor": "",
+    "ProductColor": "Black",
     "ProductImage": "motionproclutchcable",
     "ProductPrice": 9.89
   },
@@ -125,10 +125,121 @@
     "Category": "Handlebars",
     "ProductBrand": "Odi",
     "ProductModel": "V2 Emig MX Lock-On Grips",
-    "Description": "",
+    "Description": "Bolt-on Grips",
     "ProductSize": "",
-    "ProductColor": "Black/Whtie,Black/Green/Black/Red,Black/Blue,Black/Yellow",
+    "ProductColor": "Black/White",
     "ProductImage": "odiv2emigmxlock",
     "ProductPrice": 24.99
+  } ,
+  {
+    "Id": 0,
+    "Category": "Graphics",
+    "ProductBrand": "Attack",
+    "ProductModel": "Graphic Kit",
+    "Description": "Attack Bike Graphics",
+    "ProductSize": "",
+    "ProductColor": "",
+    "ProductImage": "attackgraphics",
+    "ProductPrice": 69.99
+  },  {
+    "Id": 0,
+    "Category": "Tires",
+    "ProductBrand": "Bridgestone",
+    "ProductModel": "Battlecross",
+    "Description": "Rear Tire",
+    "ProductSize": "110/90x18",
+    "ProductColor": "Black",
+    "ProductImage": "bridgestonebattlecross",
+    "ProductPrice": 74.99
+  },  {
+    "Id": 0,
+    "Category": "Tires",
+    "ProductBrand": "Dunlop",
+    "ProductModel": "MX-33",
+    "Description": "Intermediate/Soft Terrain Tire",
+    "ProductSize": "120/100x19",
+    "ProductColor": "Black",
+    "ProductImage": "dunlopmx33",
+    "ProductPrice": 79.99
+  },  {
+    "Id": 0,
+    "Category": "Graphics",
+    "ProductBrand": "Factory Effex",
+    "ProductModel": "OEM KTM",
+    "Description": "Fork Guard Decals",
+    "ProductSize": "",
+    "ProductColor": "Orange",
+    "ProductImage": "factoryeffexoemktm",
+    "ProductPrice": 19.99
+  },  {
+    "Id": 0,
+    "Category": "Tires",
+    "ProductBrand": "Kenda",
+    "ProductModel": "K-760",
+    "Description": "Intermediate/Hard Terrain Tire",
+    "ProductSize": "100/80x16",
+    "ProductColor": "Black",
+    "ProductImage": "kendak760",
+    "ProductPrice": 59.99
+  },  {
+    "Id": 0,
+    "Category": "Tires",
+    "ProductBrand": "Michelin",
+    "ProductModel": "Starcross",
+    "Description": "SX Replica Tire",
+    "ProductSize": "120/100x18",
+    "ProductColor": "Black",
+    "ProductImage": "michelinstarcross",
+    "ProductPrice": 74.99
+  },  {
+    "Id": 0,
+    "Category": "Accessories",
+    "ProductBrand": "Tusk",
+    "ProductModel": "Oil Filler Plug",
+    "Description": "Replacent Annodized Plug",
+    "ProductSize": "",
+    "ProductColor": "Blue",
+    "ProductImage": "tuskoilfillerplug",
+    "ProductPrice": 11.99
+  },  {
+    "Id": 0,
+    "Category": "Brakes",
+    "ProductBrand": "Pro X",
+    "ProductModel": "Brake Pad Rear",
+    "Description": "Sintered Metal",
+    "ProductSize": "",
+    "ProductColor": "",
+    "ProductImage": "proxbrakepad",
+    "ProductPrice": 22.95
+  },  {
+    "Id": 0,
+    "Category": "Drive",
+    "ProductBrand": "Primary Drive",
+    "ProductModel": "Front Sprocket",
+    "Description": "",
+    "ProductSize": "13 Tooth",
+    "ProductColor": "",
+    "ProductImage": "primarydrivefront",
+    "ProductPrice": 8.99
+  },  {
+    "Id": 0,
+    "Category": "Drive",
+    "ProductBrand": "Primary Drive",
+    "ProductModel": "520 ORH",
+    "Description": "Gold X-Ring Chain",
+    "ProductSize": "520x114",
+    "ProductColor": "Gold",
+    "ProductImage": "primarydrive520orh",
+    "ProductPrice": 65.43
+  },  {
+    "Id": 0,
+    "Category": "Drive",
+    "ProductBrand": "DID",
+    "ProductModel": "520 Chain",
+    "Description": "",
+    "ProductSize": "520x114",
+    "ProductColor": "Grey",
+    "ProductImage": "did520chain",
+    "ProductPrice": 37.88
   }
 ]

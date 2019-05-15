@@ -10,8 +10,8 @@ using MyStoreWeb.Data;
 namespace MyStoreWeb.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20190514192015_IdentityV2")]
-    partial class IdentityV2
+    [Migration("20190515063225_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
