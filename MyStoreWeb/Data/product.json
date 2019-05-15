@@ -141,7 +141,8 @@
     "ProductColor": "",
     "ProductImage": "attackgraphics",
     "ProductPrice": 69.99
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Tires",
     "ProductBrand": "Bridgestone",
@@ -151,7 +152,8 @@
     "ProductColor": "Black",
     "ProductImage": "bridgestonebattlecross",
     "ProductPrice": 74.99
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Tires",
     "ProductBrand": "Dunlop",
@@ -161,7 +163,8 @@
     "ProductColor": "Black",
     "ProductImage": "dunlopmx33",
     "ProductPrice": 79.99
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Graphics",
     "ProductBrand": "Factory Effex",
@@ -171,7 +174,8 @@
     "ProductColor": "Orange",
     "ProductImage": "factoryeffexoemktm",
     "ProductPrice": 19.99
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Tires",
     "ProductBrand": "Kenda",
@@ -181,7 +185,8 @@
     "ProductColor": "Black",
     "ProductImage": "kendak760",
     "ProductPrice": 59.99
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Tires",
     "ProductBrand": "Michelin",
@@ -191,7 +196,8 @@
     "ProductColor": "Black",
     "ProductImage": "michelinstarcross",
     "ProductPrice": 74.99
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Accessories",
     "ProductBrand": "Tusk",
@@ -201,7 +207,8 @@
     "ProductColor": "Blue",
     "ProductImage": "tuskoilfillerplug",
     "ProductPrice": 11.99
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Brakes",
     "ProductBrand": "Pro X",
@@ -211,7 +218,8 @@
     "ProductColor": "",
     "ProductImage": "proxbrakepad",
     "ProductPrice": 22.95
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Drive",
     "ProductBrand": "Primary Drive",
@@ -221,7 +229,8 @@
     "ProductColor": "",
     "ProductImage": "primarydrivefront",
     "ProductPrice": 8.99
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Drive",
     "ProductBrand": "Primary Drive",
@@ -231,7 +240,8 @@
     "ProductColor": "Gold",
     "ProductImage": "primarydrive520orh",
     "ProductPrice": 65.43
-  },  {
+  },
+  {
     "Id": 0,
     "Category": "Drive",
     "ProductBrand": "DID",
@@ -241,5 +251,180 @@
     "ProductColor": "Grey",
     "ProductImage": "did520chain",
     "ProductPrice": 37.88
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "MSR",
+    "ProductModel": "NXT",
+    "Description": "Jersey",
+    "ProductSize": "M/L/XL",
+    "ProductColor": "Blue/Red",
+    "ProductImage": "msrnxtjerseybluered",
+    "ProductPrice": 18.50
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "MSR",
+    "ProductModel": "NXT",
+    "Description": "Jersey",
+    "ProductSize": "S/M/L",
+    "ProductColor": "Black/Flo Green",
+    "ProductImage": "msrnxtjerseygreyyellow",
+    "ProductPrice": 18.50
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fly",
+    "ProductModel": "Kinetic Era",
+    "Description": "Jersey",
+    "ProductSize": "YS/YM/YL",
+    "ProductColor": "Blue/Black",
+    "ProductImage": "flyracingkineticerabluejersey",
+    "ProductPrice": 25.99
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fly",
+    "ProductModel": "Kinetic Era",
+    "Description": "Jersey",
+    "ProductSize": "YS/YM/YL",
+    "ProductColor": "Orange/Navy",
+    "ProductImage": "flyracingkineticeraorangejersey",
+    "ProductPrice": 25.99
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fly",
+    "ProductModel": "F-16",
+    "Description": "Pants",
+    "ProductSize": "32/34/36",
+    "ProductColor": "Neon Pink/Black/Grey",
+    "ProductImage": "flyracingf16pantneonpinkblackgrey",
+    "ProductPrice": 79.95
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fly",
+    "ProductModel": "Kinetic Era",
+    "Description": "Jersey",
+    "ProductSize": "S/M",
+    "ProductColor": "Grey/Hi-Vis",
+    "ProductImage": "flyracingkineticeragreyhivisjersey",
+    "ProductPrice": 25.99
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "MSR",
+    "ProductModel": "NXT",
+    "Description": "Pant",
+    "ProductSize": "32",
+    "ProductColor": "Blue/Red",
+    "ProductImage": "msrnxtpantbluered",
+    "ProductPrice": 64.50
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "MSR",
+    "ProductModel": "NXT",
+    "Description": "Pant",
+    "ProductSize": "34",
+    "ProductColor": "Cyan/White",
+    "ProductImage": "msrnxtpantcyanwhite",
+    "ProductPrice": 64.50
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fly",
+    "ProductModel": "Kinetic Crux",
+    "Description": "Pant",
+    "ProductSize": "30/32",
+    "ProductColor": "Teal/Red",
+    "ProductImage": "flyracingkineticcruxpantstealred",
+    "ProductPrice": 41.77
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fly",
+    "ProductModel": "Kinetic Crux",
+    "Description": "Pant",
+    "ProductSize": "28/34",
+    "ProductColor": "Orange/Purple",
+    "ProductImage": "flyracingkineticcruxpantsorangepurple",
+    "ProductPrice": 41.77
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Answer",
+    "ProductModel": "Syncron",
+    "Description": "Pant",
+    "ProductSize": "28/32/34",
+    "ProductColor": "Yellow/Blue",
+    "ProductImage": "answersyncronpantblueyellow",
+    "ProductPrice": 54.99
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Answer",
+    "ProductModel": "Syncron",
+    "Description": "Pant",
+    "ProductSize": "30/34",
+    "ProductColor": "Cyan/Navy",
+    "ProductImage": "answersyncronpantcyannavy",
+    "ProductPrice": 54.99
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "MSR",
+    "ProductModel": "NXT",
+    "Description": "Gloves",
+    "ProductSize": "S/M",
+    "ProductColor": "Blue/Red",
+    "ProductImage": "msrnxtblueredglove",
+    "ProductPrice": 15.25
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fly",
+    "ProductModel": "Kinetic",
+    "Description": "Race Gloves 2017",
+    "ProductSize": "L/XL",
+    "ProductColor": "Red/White/Blue",
+    "ProductImage": "flyracingkineticglove2017redwhiteblue",
+    "ProductPrice": 8.77
+  },
+  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fly",
+    "ProductModel": "Kinetic",
+    "Description": "Race Gloves 2017",
+    "ProductSize": "L/XL",
+    "ProductColor": "Dark Teal/Red/Hi-Vis",
+    "ProductImage": "flyracingkineticglove2017darktealredhivis",
+    "ProductPrice": 8.77
+  },  {
+    "Id": 0,
+    "Category": "Gear",
+    "ProductBrand": "Fox",
+    "ProductModel": "Dirtpaw",
+    "Description": "Race Gloves",
+    "ProductSize": "YS/YM/YL",
+    "ProductColor": "Blue",
+    "ProductImage": "foxracingyouthdirtpawblue",
+    "ProductPrice": 21.95
   }
 ]

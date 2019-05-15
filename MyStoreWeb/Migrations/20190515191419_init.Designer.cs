@@ -10,7 +10,7 @@ using MyStoreWeb.Data;
 namespace MyStoreWeb.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20190515063225_init")]
+    [Migration("20190515191419_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
