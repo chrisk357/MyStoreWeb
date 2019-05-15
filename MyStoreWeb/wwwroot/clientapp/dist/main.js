@@ -217,7 +217,7 @@ exports.Checkout = Checkout;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-4 offset-md-4\">\r\n        <div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{ errorMessage }}</div>\r\n        <form (submit)=\"onLogin()\" #theForm=\"ngForm\" novalidate>\r\n            <div class=\"form-group\">\r\n                <label for=\"username\">Username</label>\r\n                <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"creds.username\" #username=\"ngModel\" required />\r\n                <div class=\"text-danger\" *ngIf=\"username.touched && username.invalid && username.errors.required\">Username is required!</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"password\">Password</label>\r\n                <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"creds.password\" required #password=\"ngModel\" />\r\n                <div class=\"text-danger\" *ngIf=\"password.touched && password.invalid && password.errors.required\">Password is required!</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <input type=\"submit\" class=\"btn btn-success\" value=\"Login\" [disabled]=\"theForm.invalid\" />\r\n                <a routerLink=\"/\" class=\"btn btn-default\">Cancel</a>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>"
+module.exports = "<h3>{{ Title }}</h3>\r\n<div class=\"row\">\r\n    <div class=\"col-md-4 offset-md-4\">\r\n        <div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{ errorMessage }}</div>\r\n        <form (submit)=\"onLogin()\" #theForm=\"ngForm\" novalidate>\r\n            <div class=\"form-group\">\r\n                <label for=\"username\">Username</label>\r\n                <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"creds.username\" #username=\"ngModel\" required />\r\n                <div class=\"text-danger\" *ngIf=\"username.touched && username.invalid && username.errors.required\">Username is required!</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"password\">Password</label>\r\n                <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"creds.password\" required #password=\"ngModel\" />\r\n                <div class=\"text-danger\" *ngIf=\"password.touched && password.invalid && password.errors.required\">Password is required!</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <input type=\"submit\" class=\"btn btn-success\" value=\"Login\" [disabled]=\"theForm.invalid\" />\r\n                <a routerLink=\"/\" class=\"btn btn-default\">Cancel</a>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -348,15 +348,14 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
-    /*
-    login(creds): Observable<boolean> {
-        return this.http.post("/account/createtoken", creds)
-            .map((data: any) => {
-                this.token = data.token;
-                this.tokenExpiration = data.expiration;
-                return true;
-            });
-    }
+    /*login(creds): Observable<boolean> {
+          return this.http.post("/account/createtoken", creds)
+              .map((data: any) => {
+                  this.token = data.token;
+                  this.tokenExpiration = data.expiration;
+                  return true;
+              });
+     }
     */
     DataService.prototype.checkout = function () {
         var _this = this;
@@ -462,7 +461,7 @@ exports.OrderItem = OrderItem;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<h4>Shopping Cart</h4>\r\n<div>Items: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subtotal | currency: \"USD\":true }}</div>\r\n\r\n<div class=\"d-sm-flex\">\r\n    <table class=\"table table-condensed table-striped table-sm table-hover bg-light\">\r\n        <thead>\r\n            <tr>\r\n                <td>Product</td>\r\n                <td>#</td>\r\n                <td>$</td>\r\n                <td>Total</td>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr *ngFor=\"let o of data.order.items\">\r\n                <td>{{ o.productBrand }}-{{ o.productModel }}</td>\r\n                <td>{{ o.quantity }}</td>\r\n                <td>{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n                <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n<!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->\r\n<button class=\"btn btn-success\" *ngIf=\"data.order.items.length > 0\" (click)=\"onCheckout()\">Checkout</button>\r\n   \r\n\r\n    "
+module.exports = "\r\n<h4>Shopping Cart</h4>\r\n<div>Items: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subtotal | currency: \"USD\":true }}</div>\r\n\r\n<div class=\"d-sm-flex\">\r\n    <table class=\"table table-condensed table-striped table-sm table-hover bg-light\">\r\n        <thead>\r\n            <tr>\r\n                <td>Product</td>\r\n                <td>#</td>\r\n                <td>$</td>\r\n                <td>Total</td>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr *ngFor=\"let o of data.order.items\">\r\n                <td>{{ o.productBrand }}----{{ o.productModel }}</td>\r\n                <td>{{ o.quantity }}</td>\r\n                <td>{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n                <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n<!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->\r\n<button class=\"btn btn-success\" *ngIf=\"data.order.items.length > 0\" (click)=\"onCheckout()\">Checkout</button>\r\n   \r\n\r\n    "
 
 /***/ }),
 
@@ -530,7 +529,7 @@ exports.Cart = Cart;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".product-info img {\r\n    max-width: 60px;\r\n   \r\n    margin: 0;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name {\r\n    font-weight: bold;\r\n    \r\n\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9hcHAvc2hvcC9wcm9kdWN0TGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTs7SUFFZixTQUFTO0lBQ1QsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksaUJBQWlCOzs7QUFHckIiLCJmaWxlIjoiQ2xpZW50QXBwL2FwcC9zaG9wL3Byb2R1Y3RMaXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdC1pbmZvIGltZyB7XHJcbiAgICBtYXgtd2lkdGg6IDYwcHg7XHJcbiAgIFxyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgYm9yZGVyOiBzb2xpZCAxcHggYmxhY2s7XHJcbn1cclxuXHJcbi5wcm9kdWN0LWluZm8gLnByb2R1Y3QtbmFtZSB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIFxyXG5cclxufSJdfQ== */"
+module.exports = ".product-info img {\r\n    max-width: 70px;\r\n   \r\n    margin: 0;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name {\r\n    font-weight: bold;\r\n    \r\n\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9hcHAvc2hvcC9wcm9kdWN0TGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTs7SUFFZixTQUFTO0lBQ1QsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksaUJBQWlCOzs7QUFHckIiLCJmaWxlIjoiQ2xpZW50QXBwL2FwcC9zaG9wL3Byb2R1Y3RMaXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdC1pbmZvIGltZyB7XHJcbiAgICBtYXgtd2lkdGg6IDcwcHg7XHJcbiAgIFxyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgYm9yZGVyOiBzb2xpZCAxcHggYmxhY2s7XHJcbn1cclxuXHJcbi5wcm9kdWN0LWluZm8gLnByb2R1Y3QtbmFtZSB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIFxyXG5cclxufSJdfQ== */"
 
 /***/ }),
 
@@ -541,7 +540,7 @@ module.exports = ".product-info img {\r\n    max-width: 60px;\r\n   \r\n    marg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-3 \"  *ngFor=\"let p of products\">\r\n        <div class=\"card bg-light p-1 m-1\"> \r\n        <img src=\"/images/{{ p.productImage }}.jpg\"  [alt]=\"p.productImage\" />\r\n        <div class=\"product-name float-right\" > {{ p.productBrand }}-{{ p.category }} </div>\r\n    <!--    <ul class=\"product-props list-unstyled\">    -->\r\n            <div><strong>Price:</strong> {{ p.productPrice }} </div>\r\n            <div><strong>Model:</strong> {{ p.productModel }}</div>\r\n            <div><strong>Description:</strong> {{ p.description }}</div>\r\n            <div><strong>Color:</strong> {{ p.productColor }}</div>\r\n            <div><strong>Size:</strong> {{ p.productSize }}</div>\r\n\r\n      <!--  </ul>    -->\r\n        <button id=\"buyButton\" class=\"btn btn-success btn-sm pull-right\" (click)=\"addProduct(p)\">Buy</button>\r\n    </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "\r\n\r\n<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-3\"  *ngFor=\"let p of products\">\r\n        <div class=\"card bg-light p-1 m-1\">\r\n            <img src=\"/images/{{ p.productImage }}.jpg\" class=\"img-fluid\" [alt]=\"p.productImage\" />\r\n            <h6> {{ p.productBrand }} {{p.productModel }} </h6>\r\n            <ul class=\"product-props list-unstyled\">    \r\n         <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->\r\n            <li><strong>Description:</strong> {{ p.description }}</li>\r\n            <li><strong>Color:</strong> {{ p.productColor }}</li>\r\n            <li><strong>Size:</strong> {{ p.productSize }}</li>\r\n            <li><strong>Price:</strong> {{ p.productPrice }} </li>\r\n\r\n\r\n              </ul>    \r\n            <button id=\"buyButton\" class=\"btn btn-success btn-sm pull-right\" (click)=\"addProduct(p)\">Buy</button>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -605,7 +604,7 @@ exports.ProductList = ProductList;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-9\">\r\n        <h3>{{ title }}</h3>\r\n        <product-list></product-list>\r\n    </div>\r\n    <div class=\"col-md-3\">\r\n        <div class=\"card bg-light p-2\">\r\n            <the-cart></the-cart>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <h3>{{ title }}</h3>\r\n        <product-list></product-list>\r\n    </div>\r\n    <div class=\"col-md-3\">\r\n        <div class=\"card bg-light p-2\">\r\n            <the-cart></the-cart>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 

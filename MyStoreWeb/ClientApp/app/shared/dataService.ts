@@ -13,6 +13,7 @@ import { Order, OrderItem } from "./order";
 export class DataService {
 
     constructor(private http: HttpClient) {
+
     }
 
     private token: string = "";
@@ -21,8 +22,7 @@ export class DataService {
     public order: Order = new Order();
 
     public products: Product[] = [];
-
-    
+        
     loadProducts(): Observable<boolean> {
         return this.http.get("/api/products")
             .pipe(
@@ -30,7 +30,6 @@ export class DataService {
                     this.products = data;
                     return true;
             }));
-
     }
 
     /*
@@ -55,16 +54,16 @@ export class DataService {
                     return true;
                 }));
     }
-    /*
-    login(creds): Observable<boolean> {
+
+  /*login(creds): Observable<boolean> {
         return this.http.post("/account/createtoken", creds)
             .map((data: any) => {
                 this.token = data.token;
                 this.tokenExpiration = data.expiration;
                 return true;
             });
-    }
-    */
+   }
+  */
     public checkout() {
         if (!this.order.orderNumber) {
             this.order.orderNumber = this.order.orderDate.getFullYear().toString()
@@ -78,6 +77,7 @@ export class DataService {
                 return true;
             });
     }
+
 
     /* TRYING TO SWITCH CODE BC ITS NOT WORKING
     public checkout() {

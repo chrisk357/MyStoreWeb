@@ -11,7 +11,7 @@
 }
 
 
-<div class="col-md-6 offset-md-3">
+<div class="col-md ">
     <div class="card card-body bg-light">
         <form class="ContactForm" method="post">
             <div asp-validation-summary="ModelOnly"></div>
@@ -43,11 +43,13 @@
 
 
             <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary" />
-                <div class="text-success">@ViewBag.UserMessage</div>
+                <button class="btn-primary form-group float-right ">
+                    <i class="fa fa-envelope"></i>
+                </button><div class="text-success">@ViewBag.UserMessage</div>
             </div>
         </form>
     </div>
+
 
     <div id="accordion">
 

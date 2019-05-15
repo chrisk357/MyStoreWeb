@@ -19,14 +19,9 @@
                       crossorigin="anonymous"
                       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
             </environment>
-        <style>
-            /* Make the image fully responsive */
-            .carousel-inner img {
-                width: 100%;
-                height: 100%;
-            }
-        </style>
     *@
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 
@@ -61,17 +56,11 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
                     </li>
-
-
-
-
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
                         </li>
-                     
-                        
                     }
                     else
                     {
@@ -81,31 +70,30 @@
                     }
                 </ul>
 
-                <form class="p-2 ml-auto" action="#" style="flex-basis">
-                    <input class="ml-auto mr-sm-1" type="text" placeholder="Search">
-                    <button class="btn btn-success small" type="submit">Search</button>
+                <form method="get" class="p-2 ml-auto" action="#">
+                    <div class="form-group">
+                        <div class="input-group">
+
+                            <input type="search" class="form-control" value="" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default btn-success">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
                 </form>
-                
 
-
+                               
             </div>
-
-
-
-
-
-
+                                          
         </nav>
     </header>
 
   
+    <hr />
 
 
-
-
-
-
- <hr />
     <div class="container-fluid" style="background-color:lightgray">
       @*  <partial name="_CookieConsentPartial" />   *@
         <main role="main" class="pb-3">

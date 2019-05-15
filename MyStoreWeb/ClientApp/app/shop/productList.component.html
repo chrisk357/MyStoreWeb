@@ -1,18 +1,21 @@
-﻿<div class="row">
+﻿
 
-    <div class="product-info col-md-3 "  *ngFor="let p of products">
-        <div class="card bg-light p-1 m-1"> 
-        <img src="/images/{{ p.productImage }}.jpg"  [alt]="p.productImage" />
-        <div class="product-name float-right" > {{ p.productBrand }}-{{ p.category }} </div>
-    <!--    <ul class="product-props list-unstyled">    -->
-            <div><strong>Price:</strong> {{ p.productPrice }} </div>
-            <div><strong>Model:</strong> {{ p.productModel }}</div>
-            <div><strong>Description:</strong> {{ p.description }}</div>
-            <div><strong>Color:</strong> {{ p.productColor }}</div>
-            <div><strong>Size:</strong> {{ p.productSize }}</div>
+<div class="row">
 
-      <!--  </ul>    -->
-        <button id="buyButton" class="btn btn-success btn-sm pull-right" (click)="addProduct(p)">Buy</button>
-    </div>
+    <div class="product-info col-md-3"  *ngFor="let p of products">
+        <div class="card bg-light p-1 m-1">
+            <img src="/images/{{ p.productImage }}.jpg" class="img-fluid" [alt]="p.productImage" />
+            <h6> {{ p.productBrand }} {{p.productModel }} </h6>
+            <ul class="product-props list-unstyled">    
+         <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->
+            <li><strong>Description:</strong> {{ p.description }}</li>
+            <li><strong>Color:</strong> {{ p.productColor }}</li>
+            <li><strong>Size:</strong> {{ p.productSize }}</li>
+            <li><strong>Price:</strong> {{ p.productPrice }} </li>
+
+
+              </ul>    
+            <button id="buyButton" class="btn btn-success btn-sm pull-right" (click)="addProduct(p)">Buy</button>
+        </div>
     </div>
 </div>

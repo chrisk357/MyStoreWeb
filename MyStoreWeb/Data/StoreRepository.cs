@@ -108,6 +108,26 @@ namespace MyStoreWeb.Data
                 .ToList();
         }
 
+
+
+        public IEnumerable<Product> GetProductByBrand(string brand = null)
+        {
+            return _ctx.Products
+                .Where(p => p.ProductBrand == brand || p.ProductBrand.StartsWith(brand))
+                ;        
+        }
+
+
+
+
+        /*
+            return from p in Products
+                   where string.IsNullOrEmpty(brand) || p.brand.startswith(brand)
+                   orderby p.ProductBrand
+                   select p;
+        }
+        */
+
         public bool SaveAll()
         {
             return _ctx.SaveChanges() > 0;
