@@ -56,6 +56,7 @@ export class DataService {
     }
 
 
+
     public checkout() {
         if (!this.order.orderNumber) {
             this.order.orderNumber = this.order.orderDate.getFullYear().toString()
@@ -71,23 +72,7 @@ export class DataService {
     }
 
 
-    /* TRYING TO SWITCH CODE BC ITS NOT WORKING
-    public checkout() {
-        if (!this.order.orderNumber) {
-            this.order.orderNumber = this.order.orderDate.getFullYear()
-                .toString() + this.order.orderDate.getTime().toString();
-        }
 
-        return this.http.post("/api/orders", this.order, {
-            headers: new HttpHeaders({ "Authorization": "Bearer " + this.token })
-        })
-            .pipe(
-                map(response => {
-                    this.order = new Order();
-                    return true;
-                }));
-    }
-*/
 
 
 

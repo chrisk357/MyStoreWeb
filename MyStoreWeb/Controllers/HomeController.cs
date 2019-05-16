@@ -68,21 +68,10 @@ namespace MyStoreWeb.Controllers
         public IActionResult Shop()
         {
             return View();
-            /*
-            var results = _context.Products
-                .OrderBy(p => p.Category)
-                .ToList();
-            
-            //This does the same thing as above
 
-            var results = from p in DbContext.Products
-                          orderby p.Category
-                          select p;
-            return View(results.ToList());
-            */
         }
 
-        /*Not sure what this does right here may try to remove it or look it up
+        /*Not sure what this does right here 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

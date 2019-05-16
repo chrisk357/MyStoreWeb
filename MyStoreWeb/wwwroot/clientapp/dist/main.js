@@ -255,10 +255,6 @@ var Login = /** @class */ (function () {
     }
     Login.prototype.onLogin = function () {
         var _this = this;
-        /* alert(this.creds.username);
-         alert(this.creds.password);
-         */
-        // this.errorMessage = "";
         this.data.login(this.creds)
             .subscribe(function (success) {
             if (success) {
@@ -362,23 +358,6 @@ var DataService = /** @class */ (function () {
             return true;
         });
     };
-    /* TRYING TO SWITCH CODE BC ITS NOT WORKING
-    public checkout() {
-        if (!this.order.orderNumber) {
-            this.order.orderNumber = this.order.orderDate.getFullYear()
-                .toString() + this.order.orderDate.getTime().toString();
-        }
-
-        return this.http.post("/api/orders", this.order, {
-            headers: new HttpHeaders({ "Authorization": "Bearer " + this.token })
-        })
-            .pipe(
-                map(response => {
-                    this.order = new Order();
-                    return true;
-                }));
-    }
-*/
     DataService.prototype.AddToOrder = function (product) {
         var item = this.order.items.find(function (i) { return i.productId == product.id; });
         if (item) {
@@ -520,7 +499,7 @@ exports.Cart = Cart;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".product-info img {\r\n    max-width: 90px;\r\n   \r\n    margin: 0 1px;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name {\r\n    font-weight: bold;\r\n    font-size:;\r\n    display:inline;\r\n    text-align:left;\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9hcHAvc2hvcC9wcm9kdWN0TGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTs7SUFFZixhQUFhO0lBQ2IsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLFVBQVU7SUFDVixjQUFjO0lBQ2QsZUFBZTs7QUFFbkIiLCJmaWxlIjoiQ2xpZW50QXBwL2FwcC9zaG9wL3Byb2R1Y3RMaXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdC1pbmZvIGltZyB7XHJcbiAgICBtYXgtd2lkdGg6IDkwcHg7XHJcbiAgIFxyXG4gICAgbWFyZ2luOiAwIDFweDtcclxuICAgIGJvcmRlcjogc29saWQgMXB4IGJsYWNrO1xyXG59XHJcblxyXG4ucHJvZHVjdC1pbmZvIC5wcm9kdWN0LW5hbWUge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBmb250LXNpemU6O1xyXG4gICAgZGlzcGxheTppbmxpbmU7XHJcbiAgICB0ZXh0LWFsaWduOmxlZnQ7XHJcblxyXG59XHJcbiJdfQ== */"
+module.exports = ".product-info img {\r\n    max-width: 90px;\r\n   \r\n    margin: 0 1px;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name {\r\n    font-weight: bold;\r\n    font-size:small;\r\n    display:inline;\r\n    text-align:center;\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9hcHAvc2hvcC9wcm9kdWN0TGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTs7SUFFZixhQUFhO0lBQ2IsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLGVBQWU7SUFDZixjQUFjO0lBQ2QsaUJBQWlCOztBQUVyQiIsImZpbGUiOiJDbGllbnRBcHAvYXBwL3Nob3AvcHJvZHVjdExpc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0LWluZm8gaW1nIHtcclxuICAgIG1heC13aWR0aDogOTBweDtcclxuICAgXHJcbiAgICBtYXJnaW46IDAgMXB4O1xyXG4gICAgYm9yZGVyOiBzb2xpZCAxcHggYmxhY2s7XHJcbn1cclxuXHJcbi5wcm9kdWN0LWluZm8gLnByb2R1Y3QtbmFtZSB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGZvbnQtc2l6ZTpzbWFsbDtcclxuICAgIGRpc3BsYXk6aW5saW5lO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcblxyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -531,7 +510,7 @@ module.exports = ".product-info img {\r\n    max-width: 90px;\r\n   \r\n    marg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<h1 class=\"text-center\">INVENTORY</h1>\r\n<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4 well well-sm\"  *ngFor=\"let p of products\">\r\n\r\n        <div class=\"card bg-light p-1 m-1\">\r\n            <img src=\"/images/{{ p.productImage }}.jpg\" class=\"img-responsive\" [alt]=\"p.productImage\" />\r\n            <div class=\"product-name\"> {{ p.productBrand }} {{p.productModel }} </div>\r\n            <ul class=\"product-props list-unstyled\">\r\n                <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->\r\n                <li style=\"font-size:x-small\"><strong>Description:</strong> {{ p.description }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Color:</strong> {{ p.productColor }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Size:</strong> {{ p.productSize }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Price: $</strong> {{ p.productPrice }} </li>\r\n            </ul>\r\n            <button id=\"buyButton\" class=\"btn btn-success \" (click)=\"addProduct(p)\">Buy</button>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    </div>\r\n"
+module.exports = "\r\n\r\n<h1 class=\"text-center font-weight-bolder\">INVENTORY</h1>\r\n<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4 well well-sm\"  *ngFor=\"let p of products\">\r\n\r\n        <div class=\"card bg-light p-1 m-1\">\r\n            <div class=\"product-name\"> {{ p.productBrand }} {{p.productModel }} </div>\r\n\r\n            <img src=\"/images/{{ p.productImage }}.jpg\" class=\"img-responsive\" [alt]=\"p.productImage\" />\r\n            <ul class=\"product-props list-unstyled\">\r\n                <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->\r\n                <li style=\"font-size:x-small\"><strong>Description:</strong> {{ p.description }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Color:</strong> {{ p.productColor }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Size:</strong> {{ p.productSize }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Price: $</strong> {{ p.productPrice }} </li>\r\n            </ul>\r\n            <button id=\"buyButton\" class=\"btn btn-success \" (click)=\"addProduct(p)\">Buy</button>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    </div>\r\n"
 
 /***/ }),
 
@@ -595,7 +574,7 @@ exports.ProductList = ProductList;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <h3>{{ title }}</h3>\r\n        <product-list></product-list>\r\n    </div>\r\n    <div class=\"col-md-3\">\r\n        <div class=\"card bg-light p-2\">\r\n            <the-cart></the-cart>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n    <h3 class=\"text-center\">{{ title }}</h3>\r\n        </div>\r\n    <div class=\"col-md-9\">\r\n        <product-list></product-list>\r\n    </div>\r\n    <div class=\"col-md-3\">\r\n        <div class=\"card bg-light p-1\" style=\"border: 2px dashed green\">\r\n            <the-cart></the-cart>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 

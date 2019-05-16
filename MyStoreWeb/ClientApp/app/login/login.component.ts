@@ -20,10 +20,7 @@ export class Login {
     };
 
     onLogin() {
-       /* alert(this.creds.username);
-        alert(this.creds.password);
-        */
-       // this.errorMessage = "";
+
         this.data.login(this.creds)
             .subscribe(success => {
                 if (success) {

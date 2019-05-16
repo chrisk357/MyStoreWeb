@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
 export class Cart {
 
     //could be public or private data. 
-    constructor(private data: DataService, private router: Router) { }
+    constructor(public data: DataService, private router: Router) { }
 
     onCheckout() {
         if (this.data.loginRequired) {

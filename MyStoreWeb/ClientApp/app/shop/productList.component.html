@@ -1,13 +1,14 @@
 ﻿
 
-<h1 class="text-center">INVENTORY</h1>
+<h1 class="text-center font-weight-bolder">INVENTORY</h1>
 <div class="row">
 
     <div class="product-info col-md-4 well well-sm"  *ngFor="let p of products">
 
         <div class="card bg-light p-1 m-1">
-            <img src="/images/{{ p.productImage }}.jpg" class="img-responsive" [alt]="p.productImage" />
             <div class="product-name"> {{ p.productBrand }} {{p.productModel }} </div>
+
+            <img src="/images/{{ p.productImage }}.jpg" class="img-responsive" [alt]="p.productImage" />
             <ul class="product-props list-unstyled">
                 <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->
                 <li style="font-size:x-small"><strong>Description:</strong> {{ p.description }}</li>

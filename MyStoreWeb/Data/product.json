@@ -1,4 +1,5 @@
 [
+  /*
   {
     "Id": 0,
     "Category": "Exhaust",
@@ -120,6 +121,7 @@
     "ProductImage": "motionproclutchcable",
     "ProductPrice": 9.89
   },
+
   {
     "Id": 0,
     "Category": "Handlebars",
@@ -130,7 +132,7 @@
     "ProductColor": "Black/White",
     "ProductImage": "odiv2emigmxlock",
     "ProductPrice": 24.99
-  } ,
+  },
   {
     "Id": 0,
     "Category": "Graphics",
@@ -252,9 +254,10 @@
     "ProductImage": "did520chain",
     "ProductPrice": 37.88
   },
+  */
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Jersey",
     "ProductBrand": "MSR",
     "ProductModel": "NXT",
     "Description": "Jersey",
@@ -265,7 +268,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Jersey",
     "ProductBrand": "MSR",
     "ProductModel": "NXT",
     "Description": "Jersey",
@@ -276,7 +279,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Jersey",
     "ProductBrand": "Fly",
     "ProductModel": "Kinetic Era",
     "Description": "Jersey",
@@ -287,7 +290,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Jersey",
     "ProductBrand": "Fly",
     "ProductModel": "Kinetic Era",
     "Description": "Jersey",
@@ -298,7 +301,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Pants",
     "ProductBrand": "Fly",
     "ProductModel": "F-16",
     "Description": "Pants",
@@ -309,7 +312,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Jersey",
     "ProductBrand": "Fly",
     "ProductModel": "Kinetic Era",
     "Description": "Jersey",
@@ -320,7 +323,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Pants",
     "ProductBrand": "MSR",
     "ProductModel": "NXT",
     "Description": "Pant",
@@ -331,7 +334,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Pants",
     "ProductBrand": "MSR",
     "ProductModel": "NXT",
     "Description": "Pant",
@@ -342,7 +345,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Pants",
     "ProductBrand": "Fly",
     "ProductModel": "Kinetic Crux",
     "Description": "Pant",
@@ -353,7 +356,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Pants",
     "ProductBrand": "Fly",
     "ProductModel": "Kinetic Crux",
     "Description": "Pant",
@@ -364,7 +367,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Pants",
     "ProductBrand": "Answer",
     "ProductModel": "Syncron",
     "Description": "Pant",
@@ -375,7 +378,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Pants",
     "ProductBrand": "Answer",
     "ProductModel": "Syncron",
     "Description": "Pant",
@@ -386,7 +389,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Gloves",
     "ProductBrand": "MSR",
     "ProductModel": "NXT",
     "Description": "Gloves",
@@ -397,7 +400,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Gloves",
     "ProductBrand": "Fly",
     "ProductModel": "Kinetic",
     "Description": "Race Gloves 2017",
@@ -408,7 +411,7 @@
   },
   {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Gloves",
     "ProductBrand": "Fly",
     "ProductModel": "Kinetic",
     "Description": "Race Gloves 2017",
@@ -416,9 +419,10 @@
     "ProductColor": "Dark Teal/Red/Hi-Vis",
     "ProductImage": "flyracingkineticglove2017darktealredhivis",
     "ProductPrice": 8.77
-  },  {
+  },
+  {
     "Id": 0,
-    "Category": "Gear",
+    "Category": "Gloves",
     "ProductBrand": "Fox",
     "ProductModel": "Dirtpaw",
     "Description": "Race Gloves",
@@ -426,5 +430,457 @@
     "ProductColor": "Blue",
     "ProductImage": "foxracingyouthdirtpawblue",
     "ProductPrice": 21.95
-  }
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "MSR",
+    "ProductModel": "MAV4",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "XSM/SM",
+    "ProductColor": "Red/Black/White",
+    "ProductImage": "msrmav4wmipsredblackwhite",
+    "ProductPrice": 99.00
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "MSR",
+    "ProductModel": "MAV4",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "XSM/SM/M/LG",
+    "ProductColor": "Orange/Black/White",
+    "ProductImage": "msrmav4wmipsorangeblackwhite",
+    "ProductPrice": 99.00
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "MSR",
+    "ProductModel": "MAV4",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "M/LG",
+    "ProductColor": "Blackout",
+    "ProductImage": "msrmav4wmipsblackout",
+    "ProductPrice": 99.00
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "MSR",
+    "ProductModel": "MAV4",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "M/LG/XXL",
+    "ProductColor": "Blue/Cyan/White",
+    "ProductImage": "msrmav4wmipsbluecyanwhite",
+    "ProductPrice": 99.00
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Bell",
+    "ProductModel": "MX-9",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "XS/S/M/LG/XXL",
+    "ProductColor": "Torch White/Blue/Yellow",
+    "ProductImage": "bellmx9torchwhiteblueyellow",
+    "ProductPrice": 159.95
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Bell",
+    "ProductModel": "MX-9",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "M/LG/XXL",
+    "ProductColor": "Tagger Asymmetric Pink/Green",
+    "ProductImage": "bellmx9taggerassymetricpinggreen",
+    "ProductPrice": 159.95
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Bell",
+    "ProductModel": "MX-9",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "M/LG/XXL",
+    "ProductColor": "Tagger Asymmetric Blue/Pink",
+    "ProductImage": "bell_19_hel_mx_9_mips-tag_asy_blu_pnk",
+    "ProductPrice": 159.95
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Bell",
+    "ProductModel": "MX-9",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "XS/M/LG/XL",
+    "ProductColor": "Presence Black/White/Red",
+    "ProductImage": "bell_19_hel_mx_9_mips-pre_blk_wht_red",
+    "ProductPrice": 159.95
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Bell",
+    "ProductModel": "MX-9",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "XS/S/M/LG/XL",
+    "ProductColor": "Presence Black/Titanium Camo",
+    "ProductImage": "bell_19_hel_mx_9_mips-pre_blk_tit_cam",
+    "ProductPrice": 159.95
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Bell",
+    "ProductModel": "MX-9",
+    "Description": "W/MIPS Helmet",
+    "ProductSize": "XS/S/M/LG/XL",
+    "ProductColor": "Presence Black/Flo Orange Camo",
+    "ProductImage": "bell_19_hel_mx_9_mips-pre_blk_flo_ora_cam",
+    "ProductPrice": 159.95
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Fox",
+    "ProductModel": "V1",
+    "Description": "Race Helmet",
+    "ProductSize": "LG/XL/XXL",
+    "ProductColor": "Red",
+    "ProductImage": "fox_18_hel_v1_rac-red",
+    "ProductPrice": 101.97
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Fox",
+    "ProductModel": "V1",
+    "Description": "Race Helmet",
+    "ProductSize": "LG/XL/XXL",
+    "ProductColor": "Pink",
+    "ProductImage": "fox_18_hel_v1_rac-pnk",
+    "ProductPrice": 101.97
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Fox",
+    "ProductModel": "V1",
+    "Description": "Race Helmet",
+    "ProductSize": "S/XL",
+    "ProductColor": "Orange",
+    "ProductImage": "fox_18_hel_v1_rac-ora",
+    "ProductPrice": 101.97
+  },
+  {
+    "Id": 0,
+    "Category": "Helmets",
+    "ProductBrand": "Fox",
+    "ProductModel": "V1",
+    "Description": "Race Helmet",
+    "ProductSize": "XL/XXL",
+    "ProductColor": "Green",
+    "ProductImage": "fox_18_hel_v1_rac-grn",
+    "ProductPrice": 101.97
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Alpinestars",
+    "ProductModel": "Tech 7",
+    "Description": "Boots 2018",
+    "ProductSize": "11/12/13/14/15",
+    "ProductColor": "Black/Red/Yellow",
+    "ProductImage": "alp_14_boo_tec_7-blk_red_yel",
+    "ProductPrice": 279.77
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Alpinestars",
+    "ProductModel": "Tech 7",
+    "Description": "Boots 2018",
+    "ProductSize": "5/6/10/11/12/13/14",
+    "ProductColor": "Black/Turquoise/White/Red",
+    "ProductImage": "alp_16_boo_tec_7-cya_blk_red",
+    "ProductPrice": 279.77
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Alpinestars",
+    "ProductModel": "Tech 7",
+    "Description": "Boots 2018",
+    "ProductSize": "5/6/7/8//12/13",
+    "ProductColor": "Black/White/Fluorescent Yellow",
+    "ProductImage": "alp_17_boo_tec_7-blk_wht_flu_yel",
+    "ProductPrice": 279.77
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Alpinestars",
+    "ProductModel": "Tech 7",
+    "Description": "Boots 2019",
+    "ProductSize": "8/9/10/11/12/13/14/15",
+    "ProductColor": "Grey/Red",
+    "ProductImage": "alp_19_boo_tec_7-gry_red",
+    "ProductPrice": 349.95
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Alpinestars",
+    "ProductModel": "Tech 7",
+    "Description": "Boots 2019",
+    "ProductSize": "7/8/9/10/11/12/13/14/15/16",
+    "ProductColor": "Dark Grey/Teal/White",
+    "ProductImage": "alp_19_boo_tec_7-dar_gry_tea_wht",
+    "ProductPrice": 349.95
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Alpinestars",
+    "ProductModel": "Tech 7",
+    "Description": "Boots 2019",
+    "ProductSize": "7/8/9/10/11/12/13/14/15/16",
+    "ProductColor": "Flo Red/Cyan/Grey/Black",
+    "ProductImage": "alp_18_boo_tec_7-flo_red_cya_gry_blk",
+    "ProductPrice": 349.95
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Alpinestars",
+    "ProductModel": "Tech 7",
+    "Description": "Boots 2019",
+    "ProductSize": "7/8/9/10/11/12/13/14/15/16",
+    "ProductColor": "Yellow/Military/Black",
+    "ProductImage": "alp_19_boo_tec_7-yel_mil_blk",
+    "ProductPrice": 349.95
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Gaerne",
+    "ProductModel": "SG-12",
+    "Description": "Boots",
+    "ProductSize": "9/10/11/12/13",
+    "ProductColor": "Green/Grey",
+    "ProductImage": "gae_16_boo_sg_12-grn_gry",
+    "ProductPrice": 494.99
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Gaerne",
+    "ProductModel": "SG-12",
+    "Description": "Boots",
+    "ProductSize": "9/11/12/13",
+    "ProductColor": "Blue/Grey",
+    "ProductImage": "gae_16_boo_sg_12-blu_gry",
+    "ProductPrice": 494.99
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Gaerne",
+    "ProductModel": "SG-12",
+    "Description": "Boots",
+    "ProductSize": "9/10/11/12",
+    "ProductColor": "Hi-Vis/Grey",
+    "ProductImage": "gae_16_boo_sg_12-hi_vis_gry",
+    "ProductPrice": 494.99
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Gaerne",
+    "ProductModel": "SG-12",
+    "Description": "Boots",
+    "ProductSize": "7/8/9/10",
+    "ProductColor": "Red/White",
+    "ProductImage": "gae_16_boo_sg_12-red_wht",
+    "ProductPrice": 494.99
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Gaerne",
+    "ProductModel": "SG-12",
+    "Description": "Boots",
+    "ProductSize": "7/9",
+    "ProductColor": "White/Blue/Red",
+    "ProductImage": "gae_17_boo_sg_12-wht_blu_red",
+    "ProductPrice": 494.99
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Thor",
+    "ProductModel": "Blitz XP",
+    "Description": "Boots",
+    "ProductSize": "6/7/9/10/11/12",
+    "ProductColor": "Flo Acid/Black",
+    "ProductImage": "tho_19_boo_bli_xp-flo_aci_blk",
+    "ProductPrice": 129.95
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Thor",
+    "ProductModel": "Blitz XP",
+    "Description": "Boots",
+    "ProductSize": "6/7/9/10/11/12",
+    "ProductColor": "Charcoal/Orange",
+    "ProductImage": "tho_19_boo_bli_xp-cha_ora",
+    "ProductPrice": 129.95
+  },
+  {
+    "Id": 0,
+    "Category": "Boots",
+    "ProductBrand": "Thor",
+    "ProductModel": "Blitz XP",
+    "Description": "Boots",
+    "ProductSize": "7/9/10/12",
+    "ProductColor": "Red/Black",
+    "ProductImage": "tho_19_boo_bli_xp-red_blk",
+    "ProductPrice": 129.95
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "100%",
+    "ProductModel": "Strata",
+    "Description": "Goggles",
+    "ProductSize": "",
+    "ProductColor": "Neon Yellow Frame/Gold Mirror Lens",
+    "ProductImage": "one_16_gog_str-neo_yel_fra-gol_mir_len",
+    "ProductPrice": 35.00
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "100%",
+    "ProductModel": "Strata",
+    "Description": "Goggles",
+    "ProductSize": "",
+    "ProductColor": "Outlaw Frame/Clear Lens",
+    "ProductImage": "one_18_gog_str-out_law_fra_cle_len",
+    "ProductPrice": 25.00
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "100%",
+    "ProductModel": "Strata",
+    "Description": "Goggles",
+    "ProductSize": "",
+    "ProductColor": "Slash Frame/Red Mirror Lens",
+    "ProductImage": "one_16_gog_str-sla_fra_red_mir_len",
+    "ProductPrice": 35.00
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "100%",
+    "ProductModel": "Strata",
+    "Description": "Goggles",
+    "ProductSize": "",
+    "ProductColor": "Nation Frame/Red Mirror Lens",
+    "ProductImage": "one_18_gog_str-nat_fra_red_mir_len",
+    "ProductPrice": 35.00
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "100%",
+    "ProductModel": "Strata",
+    "Description": "Goggles",
+    "ProductSize": "",
+    "ProductColor": "Equinox Frame/Blue Mirror Lens",
+    "ProductImage": "one_18_gog_str-equ_fra_blu_mir_len",
+    "ProductPrice": 35.00
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "Scott",
+    "ProductModel": "Hustle",
+    "Description": "Goggles 2018",
+    "ProductSize": "",
+    "ProductColor": "Assymmetric Dark Blue-Pink Frame/Silver Chrome Lens",
+    "ProductImage": "sco_16_gog_hus-asy_dar_blu_pin_fra-sil_chr_wor_len",
+    "ProductPrice": 27.99
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "Scott",
+    "ProductModel": "Hustle",
+    "Description": "Goggles 2018",
+    "ProductSize": "",
+    "ProductColor": "Assymmetric Blue-Black Frame/Clear Lens",
+    "ProductImage": "sco_16_gog_hus-asy_blu_blk_fra-clr_wor_len",
+    "ProductPrice": 24.99
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "Scott",
+    "ProductModel": "Hustle",
+    "Description": "Goggles 2018",
+    "ProductSize": "",
+    "ProductColor": "Green Frame/Clear Lens",
+    "ProductImage": "sco_16_gog_hus-grn_fra-clr_wor_len",
+    "ProductPrice": 21.99
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "Scott",
+    "ProductModel": "Hustle",
+    "Description": "Goggles 2018",
+    "ProductSize": "",
+    "ProductColor": "Cracked Orange Turquoise Frame/Clear Lens",
+    "ProductImage": "sco_16_gog_hus-cra_ora_tur_fra-clr_wor_len",
+    "ProductPrice": 24.99
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "Fox",
+    "ProductModel": "Main",
+    "Description": "Goggles",
+    "ProductSize": "",
+    "ProductColor": "Stripe White/Red/Blue",
+    "ProductImage": "fox_19_gog_mai-str_wht_red_blu",
+    "ProductPrice": 44.95
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "Fox",
+    "ProductModel": "Main",
+    "Description": "Goggles",
+    "ProductSize": "",
+    "ProductColor": "Race Pink",
+    "ProductImage": "fox_19_gog_mai-rac_pnk",
+    "ProductPrice": 24.95
+  },
+  {
+    "Id": 0,
+    "Category": "Goggles",
+    "ProductBrand": "Fox",
+    "ProductModel": "Main",
+    "Description": "Goggles",
+    "ProductSize": "",
+    "ProductColor": "Cota Cardinal",
+    "ProductImage": "fox_19_gog_mai-cot_car",
+    "ProductPrice": 34.95
+  },
+
 ]
