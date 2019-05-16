@@ -3,14 +3,12 @@
 <div>Items: {{ data.order.items.length }}</div>
 
 
-<div class="table-responsive">
-    <table class="table table-condensed table-striped table-sm table-hover bg-light">
+    <table class="table-responsive table-condensed   table-hover bg-light">
         <thead>
             <tr>
-                <td>Item</td>
-                <td>#</td>
-                <td>$</td>
-                <td>Total</td>
+                <td style="font-size:small">Item</td>
+                <td style="font-size:small">#</td>
+                <td style="font-size:small">Total</td>
           
             </tr>
         </thead>
@@ -18,16 +16,15 @@
             <tr *ngFor="let o of data.order.items">
                 <td style="font-size:x-small">{{ o.productBrand }}-{{ o.productModel }}</td>
                 <td style="font-size:x-small">{{ o.quantity }}</td>
-                <td style="font-size:x-small">{{ o.unitPrice | currency:"USD":true }}</td>
                 <td style="font-size:x-small">{{ (o.unitPrice * o.quantity) | currency:"USD":true }}</td>
 
             </tr>
         </tbody>
-        <caption>   Subtotal: <strong>{{ data.order.subtotal | currency: "USD":true }}</strong></caption>
+        <caption> <strong>  Subtotal:  {{ data.order.subtotal | currency: "USD":true }} </strong></caption>
     </table>
-</div></div>
+</div>
 <!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->
-<button class="btn btn-success" *ngIf="data.order.items.length > 0" (click)="onCheckout()">Checkout</button>
+<button class="btn btn-success " *ngIf="data.order.items.length > 0" (click)="onCheckout()">Checkout</button>
    
 
     
