@@ -1,21 +1,23 @@
 ﻿
 
+<h1 class="text-center">INVENTORY</h1>
 <div class="row">
 
-    <div class="product-info col-md-3"  *ngFor="let p of products">
+    <div class="product-info col-md-4 well well-sm"  *ngFor="let p of products">
+
         <div class="card bg-light p-1 m-1">
-            <img src="/images/{{ p.productImage }}.jpg" class="img-fluid" [alt]="p.productImage" />
-            <h6> {{ p.productBrand }} {{p.productModel }} </h6>
-            <ul class="product-props list-unstyled">    
-         <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->
-            <li><strong>Description:</strong> {{ p.description }}</li>
-            <li><strong>Color:</strong> {{ p.productColor }}</li>
-            <li><strong>Size:</strong> {{ p.productSize }}</li>
-            <li><strong>Price:</strong> {{ p.productPrice }} </li>
+            <img src="/images/{{ p.productImage }}.jpg" class="img-responsive" [alt]="p.productImage" />
+            <div class="product-name"> {{ p.productBrand }} {{p.productModel }} </div>
+            <ul class="product-props list-unstyled">
+                <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->
+                <li style="font-size:x-small"><strong>Description:</strong> {{ p.description }}</li>
+                <li style="font-size:x-small"><strong>Color:</strong> {{ p.productColor }}</li>
+                <li style="font-size:x-small"><strong>Size:</strong> {{ p.productSize }}</li>
+                <li style="font-size:x-small"><strong>Price: $</strong> {{ p.productPrice }} </li>
+            </ul>
+            <button id="buyButton" class="btn btn-success " (click)="addProduct(p)">Buy</button>
 
 
-              </ul>    
-            <button id="buyButton" class="btn btn-success btn-sm pull-right" (click)="addProduct(p)">Buy</button>
         </div>
     </div>
-</div>
+    </div>

@@ -55,15 +55,7 @@ export class DataService {
                 }));
     }
 
-  /*login(creds): Observable<boolean> {
-        return this.http.post("/account/createtoken", creds)
-            .map((data: any) => {
-                this.token = data.token;
-                this.tokenExpiration = data.expiration;
-                return true;
-            });
-   }
-  */
+
     public checkout() {
         if (!this.order.orderNumber) {
             this.order.orderNumber = this.order.orderDate.getFullYear().toString()
@@ -96,6 +88,7 @@ export class DataService {
                 }));
     }
 */
+
 
 
     public AddToOrder( product : Product) {

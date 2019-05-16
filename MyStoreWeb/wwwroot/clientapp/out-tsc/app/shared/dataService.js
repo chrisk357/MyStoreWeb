@@ -53,15 +53,6 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
-    /*login(creds): Observable<boolean> {
-          return this.http.post("/account/createtoken", creds)
-              .map((data: any) => {
-                  this.token = data.token;
-                  this.tokenExpiration = data.expiration;
-                  return true;
-              });
-     }
-    */
     DataService.prototype.checkout = function () {
         var _this = this;
         if (!this.order.orderNumber) {

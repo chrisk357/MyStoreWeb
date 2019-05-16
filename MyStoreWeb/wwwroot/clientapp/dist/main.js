@@ -348,15 +348,6 @@ var DataService = /** @class */ (function () {
             return true;
         }));
     };
-    /*login(creds): Observable<boolean> {
-          return this.http.post("/account/createtoken", creds)
-              .map((data: any) => {
-                  this.token = data.token;
-                  this.tokenExpiration = data.expiration;
-                  return true;
-              });
-     }
-    */
     DataService.prototype.checkout = function () {
         var _this = this;
         if (!this.order.orderNumber) {
@@ -461,7 +452,7 @@ exports.OrderItem = OrderItem;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<h4>Shopping Cart</h4>\r\n<div>Items: {{ data.order.items.length }}</div>\r\n<div>Subtotal: {{ data.order.subtotal | currency: \"USD\":true }}</div>\r\n\r\n<div class=\"d-sm-flex\">\r\n    <table class=\"table table-condensed table-striped table-sm table-hover bg-light\">\r\n        <thead>\r\n            <tr>\r\n                <td>Product</td>\r\n                <td>#</td>\r\n                <td>$</td>\r\n                <td>Total</td>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr *ngFor=\"let o of data.order.items\">\r\n                <td>{{ o.productBrand }}----{{ o.productModel }}</td>\r\n                <td>{{ o.quantity }}</td>\r\n                <td>{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n                <td>{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n<!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->\r\n<button class=\"btn btn-success\" *ngIf=\"data.order.items.length > 0\" (click)=\"onCheckout()\">Checkout</button>\r\n   \r\n\r\n    "
+module.exports = "<div class= \"container-fluid\">\r\n<h4 class=\"text-center\">Shopping Cart</h4>\r\n<div>Items: {{ data.order.items.length }}</div>\r\n\r\n\r\n<div class=\"table-responsive\">\r\n    <table class=\"table table-condensed table-striped table-sm table-hover bg-light\">\r\n        <thead>\r\n            <tr>\r\n                <td>Item</td>\r\n                <td>#</td>\r\n                <td>$</td>\r\n                <td>Total</td>\r\n          \r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr *ngFor=\"let o of data.order.items\">\r\n                <td style=\"font-size:x-small\">{{ o.productBrand }}-{{ o.productModel }}</td>\r\n                <td style=\"font-size:x-small\">{{ o.quantity }}</td>\r\n                <td style=\"font-size:x-small\">{{ o.unitPrice | currency:\"USD\":true }}</td>\r\n                <td style=\"font-size:x-small\">{{ (o.unitPrice * o.quantity) | currency:\"USD\":true }}</td>\r\n\r\n            </tr>\r\n        </tbody>\r\n        <caption>   Subtotal: <strong>{{ data.order.subtotal | currency: \"USD\":true }}</strong></caption>\r\n    </table>\r\n</div></div>\r\n<!--The () parenthesis are for event handlers its a call back saying call OnCheckout when the event click has happened-->\r\n<button class=\"btn btn-success\" *ngIf=\"data.order.items.length > 0\" (click)=\"onCheckout()\">Checkout</button>\r\n   \r\n\r\n    "
 
 /***/ }),
 
@@ -529,7 +520,7 @@ exports.Cart = Cart;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".product-info img {\r\n    max-width: 70px;\r\n   \r\n    margin: 0;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name {\r\n    font-weight: bold;\r\n    \r\n\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9hcHAvc2hvcC9wcm9kdWN0TGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTs7SUFFZixTQUFTO0lBQ1QsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksaUJBQWlCOzs7QUFHckIiLCJmaWxlIjoiQ2xpZW50QXBwL2FwcC9zaG9wL3Byb2R1Y3RMaXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdC1pbmZvIGltZyB7XHJcbiAgICBtYXgtd2lkdGg6IDcwcHg7XHJcbiAgIFxyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgYm9yZGVyOiBzb2xpZCAxcHggYmxhY2s7XHJcbn1cclxuXHJcbi5wcm9kdWN0LWluZm8gLnByb2R1Y3QtbmFtZSB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIFxyXG5cclxufSJdfQ== */"
+module.exports = ".product-info img {\r\n    max-width: 90px;\r\n   \r\n    margin: 0 1px;\r\n    border: solid 1px black;\r\n}\r\n\r\n.product-info .product-name {\r\n    font-weight: bold;\r\n    font-size:;\r\n    display:inline;\r\n    text-align:left;\r\n\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9hcHAvc2hvcC9wcm9kdWN0TGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZUFBZTs7SUFFZixhQUFhO0lBQ2IsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLFVBQVU7SUFDVixjQUFjO0lBQ2QsZUFBZTs7QUFFbkIiLCJmaWxlIjoiQ2xpZW50QXBwL2FwcC9zaG9wL3Byb2R1Y3RMaXN0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdC1pbmZvIGltZyB7XHJcbiAgICBtYXgtd2lkdGg6IDkwcHg7XHJcbiAgIFxyXG4gICAgbWFyZ2luOiAwIDFweDtcclxuICAgIGJvcmRlcjogc29saWQgMXB4IGJsYWNrO1xyXG59XHJcblxyXG4ucHJvZHVjdC1pbmZvIC5wcm9kdWN0LW5hbWUge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBmb250LXNpemU6O1xyXG4gICAgZGlzcGxheTppbmxpbmU7XHJcbiAgICB0ZXh0LWFsaWduOmxlZnQ7XHJcblxyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -540,7 +531,7 @@ module.exports = ".product-info img {\r\n    max-width: 70px;\r\n   \r\n    marg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-3\"  *ngFor=\"let p of products\">\r\n        <div class=\"card bg-light p-1 m-1\">\r\n            <img src=\"/images/{{ p.productImage }}.jpg\" class=\"img-fluid\" [alt]=\"p.productImage\" />\r\n            <h6> {{ p.productBrand }} {{p.productModel }} </h6>\r\n            <ul class=\"product-props list-unstyled\">    \r\n         <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->\r\n            <li><strong>Description:</strong> {{ p.description }}</li>\r\n            <li><strong>Color:</strong> {{ p.productColor }}</li>\r\n            <li><strong>Size:</strong> {{ p.productSize }}</li>\r\n            <li><strong>Price:</strong> {{ p.productPrice }} </li>\r\n\r\n\r\n              </ul>    \r\n            <button id=\"buyButton\" class=\"btn btn-success btn-sm pull-right\" (click)=\"addProduct(p)\">Buy</button>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "\r\n\r\n<h1 class=\"text-center\">INVENTORY</h1>\r\n<div class=\"row\">\r\n\r\n    <div class=\"product-info col-md-4 well well-sm\"  *ngFor=\"let p of products\">\r\n\r\n        <div class=\"card bg-light p-1 m-1\">\r\n            <img src=\"/images/{{ p.productImage }}.jpg\" class=\"img-responsive\" [alt]=\"p.productImage\" />\r\n            <div class=\"product-name\"> {{ p.productBrand }} {{p.productModel }} </div>\r\n            <ul class=\"product-props list-unstyled\">\r\n                <!--   <div><strong>Model:</strong> {{ p.productModel }}</div>   -->\r\n                <li style=\"font-size:x-small\"><strong>Description:</strong> {{ p.description }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Color:</strong> {{ p.productColor }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Size:</strong> {{ p.productSize }}</li>\r\n                <li style=\"font-size:x-small\"><strong>Price: $</strong> {{ p.productPrice }} </li>\r\n            </ul>\r\n            <button id=\"buyButton\" class=\"btn btn-success \" (click)=\"addProduct(p)\">Buy</button>\r\n\r\n\r\n        </div>\r\n    </div>\r\n    </div>\r\n"
 
 /***/ }),
 
