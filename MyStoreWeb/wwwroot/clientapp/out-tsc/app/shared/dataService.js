@@ -67,23 +67,6 @@ var DataService = /** @class */ (function () {
             return true;
         });
     };
-    /* TRYING TO SWITCH CODE BC ITS NOT WORKING
-    public checkout() {
-        if (!this.order.orderNumber) {
-            this.order.orderNumber = this.order.orderDate.getFullYear()
-                .toString() + this.order.orderDate.getTime().toString();
-        }
-
-        return this.http.post("/api/orders", this.order, {
-            headers: new HttpHeaders({ "Authorization": "Bearer " + this.token })
-        })
-            .pipe(
-                map(response => {
-                    this.order = new Order();
-                    return true;
-                }));
-    }
-*/
     DataService.prototype.AddToOrder = function (product) {
         var item = this.order.items.find(function (i) { return i.productId == product.id; });
         if (item) {

@@ -24,10 +24,6 @@ var Login = /** @class */ (function () {
     }
     Login.prototype.onLogin = function () {
         var _this = this;
-        /* alert(this.creds.username);
-         alert(this.creds.password);
-         */
-        // this.errorMessage = "";
         this.data.login(this.creds)
             .subscribe(function (success) {
             if (success) {
