@@ -433,6 +433,117 @@
   },
   {
     "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Fox",
+    "ProductModel": "Dirtpaw Sayak",
+    "Description": "Racing Gloves",
+    "ProductSize": "L/XL",
+    "ProductColor": "Green",
+    "ProductImage": "fox_18_glo_dir_say-grn",
+    "ProductPrice": 14.97
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Fox",
+    "ProductModel": "Dirtpaw Sayak",
+    "Description": "Racing Gloves",
+    "ProductSize": "S/L/XL",
+    "ProductColor": "Red",
+    "ProductImage": "fox_18_glo_dir_say-red",
+    "ProductPrice": 14.97
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Fox",
+    "ProductModel": "Dirtpaw Sayak",
+    "Description": "Racing Gloves",
+    "ProductSize": "XS/S/L",
+    "ProductColor": "Orange",
+    "ProductImage": "fox_18_glo_dir_say-ora",
+    "ProductPrice": 14.97
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Thor",
+    "ProductModel": "Spectrum",
+    "Description": "Gloves",
+    "ProductSize": "XS/S/L/XL",
+    "ProductColor": "Green/Black",
+    "ProductImage": "tho_18_glo_spe-grn_blk",
+    "ProductPrice": 21.95
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Thor",
+    "ProductModel": "Spectrum",
+    "Description": "Gloves",
+    "ProductSize": "XS/S/L/XL",
+    "ProductColor": "Blue/Black",
+    "ProductImage": "tho_18_glo_spe-blu_blk",
+    "ProductPrice": 21.95
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Thor",
+    "ProductModel": "Spectrum",
+    "Description": "Gloves",
+    "ProductSize": "XS/S",
+    "ProductColor": "White/Black",
+    "ProductImage": "tho_18_glo_spe-wht_blk",
+    "ProductPrice": 21.95
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Thor",
+    "ProductModel": "Spectrum",
+    "Description": "Gloves",
+    "ProductSize": "XS/S/M/L",
+    "ProductColor": "Yellow/Black/Red",
+    "ProductImage": "tho_18_glo_spe-yel_blk_red",
+    "ProductPrice": 21.95
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Troy Lee",
+    "ProductModel": "Air",
+    "Description": "Gloves",
+    "ProductSize": "XS/S/L/XL",
+    "ProductColor": "Flo Pink",
+    "ProductImage": "tld_19_glo_air-flo_pnk",
+    "ProductPrice": 29.00
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Troy Lee",
+    "ProductModel": "Air",
+    "Description": "Gloves",
+    "ProductSize": "XS/M/L",
+    "ProductColor": "Flo Yellow",
+    "ProductImage": "tld_19_glo_air-flo_yel",
+    "ProductPrice": 29.00
+  },
+  {
+    "Id": 0,
+    "Category": "Gloves",
+    "ProductBrand": "Troy Lee",
+    "ProductModel": "Air",
+    "Description": "Gloves",
+    "ProductSize": "XS/M/L",
+    "ProductColor": "Light Blue",
+    "ProductImage": "tld_18_glo_air-lig_blu",
+    "ProductPrice": 29.00
+  },
+
+  {
+    "Id": 0,
     "Category": "Helmets",
     "ProductBrand": "MSR",
     "ProductModel": "MAV4",
