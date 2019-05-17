@@ -37,13 +37,9 @@ namespace MyStoreWeb.Controllers
 
         public IActionResult Login()
         {
-      //      if (this.User.Identity.IsAuthenticated)
-       //     {
-       //         return RedirectToAction("Index", "Home");
-        //    }
-
             return View();
         }
+
 
 
         [HttpPost]
