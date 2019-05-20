@@ -1,4 +1,4 @@
-﻿import { HttpClient, HttpHeaders } from "@angular/common/http";
+﻿import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs"
 import { map, retry } from "rxjs/operators";
@@ -44,7 +44,7 @@ export class DataService {
     }
 
     
-    login(creds) {
+    public login(creds) {
         return this.http.post("/account/createtoken", creds)
             .pipe(
                 map((response: any) => {

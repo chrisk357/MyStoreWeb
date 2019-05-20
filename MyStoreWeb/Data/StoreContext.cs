@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyStoreWeb.Data
 {
-    public class StoreContext : IdentityDbContext<StoreUser>
+    public class StoreContext : IdentityDbContext<IdentityUser>
     {
         public StoreContext(DbContextOptions<StoreContext> options) : base(options)
         {

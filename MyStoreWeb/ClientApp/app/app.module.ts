@@ -1,3 +1,4 @@
+/// <reference path="shared/product.ts" />
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
@@ -17,12 +18,11 @@ import { FormsModule } from "@angular/forms";
 
 
 
-
 let routes = [
     { path: "", component: Shop },
     { path: "checkout", component: Checkout },
     { path: "login", component: Login }
-    ];
+];
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ let routes = [
       Shop,
       Checkout,
       Login
-  ],
+     ],
   imports: [
       BrowserModule,
       HttpClientModule,

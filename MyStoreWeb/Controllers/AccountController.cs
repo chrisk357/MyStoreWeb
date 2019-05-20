@@ -17,6 +17,8 @@ using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace MyStoreWeb.Controllers
 {
+    
+
     public class AccountController : Controller
     {
         private readonly ILogger<AccountController> _logger;
@@ -42,6 +44,10 @@ namespace MyStoreWeb.Controllers
 
 
 
+
+
+
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -53,7 +59,6 @@ namespace MyStoreWeb.Controllers
                     false);
                 //False allows you to lock out the accounrt if the 
                 //incorect un and pw entereed
-                //Succeedded works here
                 if (result.Succeeded)
                 {
                     if (Request.Query.Keys.Contains("ReturnUrl"))
@@ -67,7 +72,6 @@ namespace MyStoreWeb.Controllers
                 }
             }
             ModelState.AddModelError("", "Failed to login");
-
             return View();
         }
 
@@ -78,6 +82,8 @@ namespace MyStoreWeb.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+
 
         [HttpPost]
         public async Task<IActionResult> CreateToken([FromBody] LoginViewModel model)

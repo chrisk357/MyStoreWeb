@@ -12,20 +12,18 @@ using MyStoreWeb.Services;
 using Newtonsoft.Json;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace MyStoreWeb
 {
     public class Startup
     {
         private readonly IConfiguration _config;
-
         public Startup(IConfiguration config)
         {
             _config = config;
         }
-
-      //  public IConfiguration Configuration { get; }
-
+        // public IConfiguration Configuration { get; }
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -43,6 +41,7 @@ namespace MyStoreWeb
                 {
                     cfg.TokenValidationParameters = new TokenValidationParameters()
                     {
+
                         ValidIssuer = _config["Tokens:Issuer"],
                         ValidAudience = _config["Tokens:Audience"],
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]))
@@ -87,7 +86,8 @@ namespace MyStoreWeb
                 // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
                 {
-                    if (env.IsDevelopment())
+            app.UseAuthentication();
+            if (env.IsDevelopment())
                     {
                         app.UseDeveloperExceptionPage();
                     }
@@ -106,7 +106,7 @@ namespace MyStoreWeb
                     app.UseSpaStaticFiles();
               //      app.UseNodeModules(env);
             //Authentication needs to be placed before the MVC one to execute properly
-                    app.UseAuthentication();
+                    
            
                 //    app.UseNodeModules(env);
                //     app.UseCookiePolicy();

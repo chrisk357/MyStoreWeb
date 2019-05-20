@@ -26,6 +26,8 @@
   <ItemGroup>
     <None Remove="ClientApp\app\checkout\checkout.component.ts" />
     <None Remove="ClientApp\app\login\login.component.ts" />
+    <None Remove="ClientApp\app\register.component.ts" />
+    <None Remove="ClientApp\app\shared\auth.service.ts" />
     <None Remove="ClientApp\app\shared\dataService.ts" />
     <None Remove="ClientApp\app\shared\order.ts" />
     <None Remove="ClientApp\app\shared\product.ts" />
