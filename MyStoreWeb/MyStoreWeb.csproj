@@ -34,6 +34,7 @@
     <None Remove="ClientApp\app\shop\cart.component.ts" />
     <None Remove="ClientApp\app\shop\productList.component.ts" />
     <None Remove="ClientApp\app\shop\shop.component.ts" />
+    <None Remove="gulpfile.xaml" />
   </ItemGroup>
 
 
@@ -42,11 +43,13 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.0" />
     <PackageReference Include="bootstrap" Version="4.3.1" />
     <PackageReference Include="FontAwesome" Version="4.7.0" />
+    <PackageReference Include="Gulp.js" Version="1.0.2" />
     <PackageReference Include="jQuery.Validation" Version="1.17.0" />
     <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Npm" Version="3.5.2" />
   </ItemGroup>
 
 
